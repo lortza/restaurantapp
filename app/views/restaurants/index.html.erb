@@ -1,18 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Restaurants</h1>
+<h1>My Restaurants</h1>
+<%= link_to '+ Add a Restaurant', new_restaurant_path %>
+
 
 <table>
   <thead>
     <tr>
       <th>Image</th>
-      <th>Name</th>
-      <th>Address</th>
+      <th>Restaurant</th>
       <th>Phone</th>
       <th>Website</th>
       <th>Price</th>
-      <th>Fave</th>
-      <th>Archive</th>
       <th colspan="2">Manage Listing</th>
     </tr>
   </thead>
@@ -21,16 +20,17 @@
     <% @restaurants.each do |restaurant| %>
       <tr>
         <td><%= image_for(restaurant) %></td>
-        <td><%= link_to restaurant.name, restaurant %></td>
-        <td><%= restaurant.street %><br>
+        <td class="fave"><%= link_to restaurant.name, restaurant %> 
+        <% if restaurant.fave? %>
+          <%= link_to image_tag("fave.png", alt: "Favorite"), filtered_restaurants_path(:fave) %>
+          <% end %><br>
+        <%= restaurant.street %><br>
         <%= restaurant.address_secondline %></td>
         <td><%= restaurant.phone %></td>
-        <td><%= restaurant.website %></td>
+        <td><%= link_to restaurant.website, restaurant.website, target: "_blank" %></td>
         <td><%= restaurant.price %></td>
-        <td><%= restaurant.fave %></td>
-        <td><%= restaurant.archive %></td>
         <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', restaurant, method: :delete, data: { confirm: "Are you sure you want to delete " + restaurant.name + "? This action cannot be undone." } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +38,3 @@
 
 <br>
 
-<%= link_to 'New Restaurant', new_restaurant_path %>

@@ -1,69 +1,76 @@
 <p id="notice"><%= notice %></p>
 
+<h2 class="fave">
+<%= @restaurant.name %> 
+<% if @restaurant.fave? %>
+  <%= link_to image_tag("fave.png", alt: "Favorite"), filtered_restaurants_path(:fave) %>
+<% end %> <!-- fave? -->
+</h2>
 <p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
+  <%= image_for(@restaurant) %>
 </p>
-
+<p><strong>Contact:</strong></p>
 <p>
-  <strong>Address:</strong>
   <%= @restaurant.street %><br>
   <%= @restaurant.address_secondline %>
 </p>
+<%= link_to "Map (doesn't work)", "https://www.google.com/maps/place/#{@restaurant.street}+#{@restaurant.city}+#{@restaurant.state}+#{@restaurant.zip}", target: "_blank" %>
+<p><%= @restaurant.phone %></p>
+<p><%= link_to @restaurant.website, @restaurant.website, target: "_blank" %></p>
+<%= link_to "Find on Yelp", "http://www.yelp.com/search?find_desc=#{@restaurant.name}&find_loc=#{@restaurant.city}+#{@restaurant.state}", target: "_blank" %>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @restaurant.phone %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @restaurant.website %>
-</p>
 <p><strong>Categories:</strong></p>
 <ul>
     <% @categories.order("name").each do |category| %>
       <li><%= link_to category.name, category %></li>
     <% end %> <!-- categories -->
   </ul>
-<p>
-  <strong>Image file name:</strong>
-  <%= image_for(@restaurant) %>
-  [placeholder image code tbd]
-</p>
 
 <p>
   <strong>Price:</strong>
   <%= @restaurant.price %>
 </p>
 
+<!-- FAVE BUTTON ACTION -->
 <p>
-  <strong>Fave:</strong>
-  <%= @restaurant.fave %>
-  [boolean button tbd]
+   <%= form_for(@restaurant, url: restaurant_path(@restaurant), :html => {class: "form-inline"}) do |f| %>
+     <% if @restaurant .fave %>
+       <%= f.hidden_field :fave, :value => false %>
+       <%= f.submit "UnFave", class: "btn btn-success btn-xs" %>
+     <% else %>
+       <%= f.hidden_field :fave, :value => true %>
+       <%= f.submit "Fave", class: "btn btn-default btn-xs" %>
+     <% end %>  <!-- if -->
+   <% end %> <!-- do -->
 </p>
 
+<!-- ARCHIVE BUTTON ACTION -->
 <p>
-  <strong>Archive:</strong>
-  <%= @restaurant.archive %>
-  [boolean button tbd]
+   <%= form_for(@restaurant, url: restaurant_path(@restaurant), :html => {class: "form-inline"}) do |f| %>
+     <% if @restaurant .archive %>
+       <%= f.hidden_field :archive, :value => false %>
+       Currently Archived. Make Active Again? 
+       <%= f.submit "UnArchive", class: "btn btn-success btn-xs" %>
+     <% else %>
+       <%= f.hidden_field :archive, :value => true %>
+       <%= f.submit "Archive", class: "btn btn-default btn-xs" %>
+     <% end %>  <!-- if -->
+   <% end %> <!-- do -->
 </p>
 
-<p><strong>Favorite Dishes:</strong></p>
-<p><%= link_to "Add a Dish", new_restaurant_dish_path(@restaurant) %></p>
-<ul>
+<p><strong><%= pluralize(@restaurant.dishes.size, "Favorite Dish") %>:</strong> (<%= link_to "+ Add a Dish", new_restaurant_dish_path(@restaurant) %>)</p>
+  <ul>
     <% @dishes.order("name").each do |dish| %>
-      <li><%= dish.name %> | links | </li>
+      <li><%= dish.name %> [links] </li>
     <% end %> <!-- dishes -->
   </ul>
 
-<p><strong>Recent Visits:</strong></p>
-<p><%= link_to "Add a Visit", new_restaurant_outing_path(@restaurant) %></p>
+<p><strong><%= pluralize(@restaurant.outings.size, "Recent Visit") %>:</strong> (<%= link_to "+ Add a Visit", new_restaurant_outing_path(@restaurant) %>)</p>
   <ul>
     <% @outings.order("date DESC").each do |outing| %>
-      <li><%= outing.date %><% if outing.note? %>, <%= outing.note %> <% end %> | links | </li>
+      <li><%= outing.date %><% if outing.note? %>, <%= outing.note %> <% end %> [links] </li>
     <% end %> <!-- outings -->
   </ul>
-
+<hr>
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>
