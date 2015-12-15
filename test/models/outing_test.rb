@@ -5,3 +5,14 @@ class OutingTest < ActiveSupport::TestCase
   #   assert true
   # end
 end
+
+# == Schema Information
+#
+# Table name: outings
+#
+#  id         :integer          not null, primary key
+#  date       :date
+#  note       :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#

@@ -7,3 +7,14 @@ one:
 two:
   date: 2015-12-14
   note: MyText
+
+# == Schema Information
+#
+# Table name: outings
+#
+#  id         :integer          not null, primary key
+#  date       :date
+#  note       :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
