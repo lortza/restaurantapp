@@ -12,4 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ *= require scaffolds
+ *= require sessions
+ *= require categories
+ *= require dishes
+ *= require outings
+ *= require restaurants
+ *= require users
  */

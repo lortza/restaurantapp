@@ -6,23 +6,9 @@
 </p>
 
 <p>
-  <strong>Street:</strong>
-  <%= @restaurant.street %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @restaurant.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @restaurant.state %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @restaurant.zip %>
+  <strong>Address:</strong>
+  <%= @restaurant.street %><br>
+  <%= @restaurant.address_secondline %>
 </p>
 
 <p>
@@ -42,7 +28,8 @@
   </ul>
 <p>
   <strong>Image file name:</strong>
-  <%= @restaurant.image_file_name %>
+  <%= image_tag(@restaurant.image_file_name) %>
+  [placeholder image code tbd]
 </p>
 
 <p>
@@ -53,12 +40,24 @@
 <p>
   <strong>Fave:</strong>
   <%= @restaurant.fave %>
+  [boolean button tbd]
 </p>
 
 <p>
   <strong>Archive:</strong>
   <%= @restaurant.archive %>
+  [boolean button tbd]
 </p>
+
+<p><strong>Favorite Dishes:</strong></p>
+<ul>
+    <% @dishes.order("name").each do |dish| %>
+      <li><%= dish.name %></li>
+    <% end %> <!-- dishes -->
+  </ul>
+
+<p><strong>Recent Visits:</strong></p>
+[outing code tbd]
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>
