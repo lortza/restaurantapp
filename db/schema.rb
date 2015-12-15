@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215005636) do
+ActiveRecord::Schema.define(version: 20151215013406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20151215005636) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "categorizations", force: :cascade do |t|
+    t.integer  "restaurant_id"
+    t.integer  "category_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "categorizations", ["category_id"], name: "index_categorizations_on_category_id", using: :btree
+  add_index "categorizations", ["restaurant_id"], name: "index_categorizations_on_restaurant_id", using: :btree
 
   create_table "dishes", force: :cascade do |t|
     t.string   "name"
@@ -59,4 +69,6 @@ ActiveRecord::Schema.define(version: 20151215005636) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "categorizations", "categories"
+  add_foreign_key "categorizations", "restaurants"
 end
