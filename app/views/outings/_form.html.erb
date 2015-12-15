@@ -1,0 +1,18 @@
+<%= form_for [@restaurant, @outing] do |f| %>
+  <%= render "shared/errors", object: @outing %>
+  <fieldset>
+      <div class="required">
+        <%= f.label :date %>
+        <%= f.date_field :date %>
+      </div>
+      <div class="required">
+        <%= f.label :note %>
+        <%= f.text_field :note, cols: 80, placeholder: "[outing note]" %>
+      </div>
+
+    <p>
+      <%= f.submit 'Submit' %> 
+      <%= link_to "Cancel", @restaurant, class: 'button' %>
+    </p>
+  </fieldset>
+<% end %>
