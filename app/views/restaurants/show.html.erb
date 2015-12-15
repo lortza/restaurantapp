@@ -34,7 +34,12 @@
   <strong>Website:</strong>
   <%= @restaurant.website %>
 </p>
-
+<p><strong>Categories:</strong></p>
+<ul>
+    <% @categories.order("name").each do |category| %>
+      <li><%= link_to category.name, category %></li>
+    <% end %> <!-- categories -->
+  </ul>
 <p>
   <strong>Image file name:</strong>
   <%= @restaurant.image_file_name %>

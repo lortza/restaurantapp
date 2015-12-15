@@ -10,7 +10,8 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
-  end
+    @categories = @restaurant.categories
+  end #show
 
   # GET /restaurants/new
   def new
@@ -25,7 +26,6 @@ class RestaurantsController < ApplicationController
   # POST /restaurants.json
   def create
     @restaurant = Restaurant.new(restaurant_params)
-
     respond_to do |format|
       if @restaurant.save
         format.html { redirect_to @restaurant, notice: 'Restaurant was successfully created.' }
@@ -33,9 +33,9 @@ class RestaurantsController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @restaurant.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+      end #if
+    end #do
+  end #create
 
   # PATCH/PUT /restaurants/1
   # PATCH/PUT /restaurants/1.json
@@ -47,9 +47,9 @@ class RestaurantsController < ApplicationController
       else
         format.html { render :edit }
         format.json { render json: @restaurant.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+      end #if
+    end #do
+  end #update
 
   # DELETE /restaurants/1
   # DELETE /restaurants/1.json
@@ -58,17 +58,16 @@ class RestaurantsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to restaurants_url, notice: 'Restaurant was successfully destroyed.' }
       format.json { head :no_content }
-    end
-  end
+    end #do
+  end #destroy
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_restaurant
       @restaurant = Restaurant.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :street, :city, :state, :zip, :phone, :website, :image_file_name, :price, :fave, :archive)
-    end
-end
+      params.require(:restaurant).permit(:name, :street, :city, :state, :zip, :phone, :website, :image_file_name, :price, :fave, :archive, category_ids: [])
+    end #restaurant_params
+
+end #RestaurantsController
