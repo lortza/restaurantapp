@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<h2>User Information</h2>
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
@@ -9,6 +10,53 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+
+<h2>Stats</h2>
+<p>
+  <strong>Restaurants:</strong>
+  <%= @user.restaurants.size %>
+</p>
+
+<p>
+  <strong>Favorite Restaurants:</strong>
+  <%= @user.restaurants.fave.size %>
+</p>
+
+<p>
+  <strong>Restaurant Visits:</strong>
+  <% outing_count = [] %>
+  <% @user.restaurants.each do |restaurant| %>
+    <% outing_count << restaurant.outings.size %>
+  <% end %>
+  <% total = outing_count.inject(:+) %>
+    <%= total %>
+</p>
+
+<p>
+  <strong>Favorite Dishes:</strong>
+  <% dish_count = [] %>
+  <% @user.restaurants.each do |restaurant| %>
+    <% dish_count << restaurant.dishes.size %>
+  <% end %>
+  <% total = dish_count.inject(:+) %>
+  <%= total %>
+</p>
+
+<p>
+  <strong>Restaurants Not Tried Yet:</strong>
+  <% outing_count = [] %>
+  <% untried_count = 0 %>
+  <% @user.restaurants.each do |restaurant| %>
+    <% if restaurant.outings.size > 0 %>
+      <% outing_count << restaurant.outings.size %>
+    <% else %>
+    <% untried_count += 1 %>
+    <% end %><!-- if -->
+  <% end %><!-- each -->
+    <%= untried_count %>
+</p>
+
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
