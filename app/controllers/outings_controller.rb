@@ -1,0 +1,2 @@
+class OutingsController < ApplicationController
+end
