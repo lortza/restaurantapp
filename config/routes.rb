@@ -1,9 +1,22 @@
 Rails.application.routes.draw do
-  resources :users
-  resources :restaurants
-  resources :outings
+
+  root "restaurants#index"
+  
   resources :categories
-  resources :dishes
+
+  resource :session
+  get "signin" => "sessions#new"
+
+  resources :users
+  get "signup" => "users#new"
+
+  get "restaurants/filter/:filter" => "restaurants#index", as: :filtered_restaurants
+
+  resources :restaurants do
+    resources :outings
+    resources :dishes
+  end #restaurants
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
