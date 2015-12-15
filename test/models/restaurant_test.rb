@@ -20,8 +20,8 @@ end
 #  website         :string
 #  image_file_name :string
 #  price           :string
-#  fave            :boolean
-#  archive         :boolean
+#  fave            :boolean          default(FALSE)
+#  archive         :boolean          default(FALSE)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  user_id         :integer
