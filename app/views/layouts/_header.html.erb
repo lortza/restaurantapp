@@ -1,2 +1,19 @@
-<%= link_to "Home", root_path %> | <%= link_to "Browse Restaurants", restaurants_path %> | <%= link_to "Browse Categories", categories_path %> | New | Faves | Been a While | Archived
+<h1>RestaurantApp</h1>
+<h3>
+  <% if current_user %>
+    <%= link_to "#{current_user.name}'s Profile", current_user %> | 
+    <%= link_to "Account Settings", edit_user_path(current_user) %> | 
+    <% if current_user.admin? %>
+        <%= link_to "All Users", users_path %> | 
+      <% end %><!-- admin? -->
+    <%= link_to "Sign Out", session_path, method: :delete, class: "button" %> 
+    <% else %>
+    <%= link_to "Sign In", new_session_path, class: "button" %> 
+    <%= link_to "Sign Up", signup_path, class: "button" %>
+  <% end %> <!-- current_user? -->
+</h3>
+
+<p>
+<%= link_to "Home", root_path %> | <%= link_to "My Restaurants", restaurants_path %> | <%= link_to "Categories", categories_path %> | <%= link_to "Faves", filtered_restaurants_path(:fave) %> | Not Tried | Been a While | <%= link_to "Archived", filtered_restaurants_path(:archived) %> 
+</p>
 <hr>
