@@ -4,8 +4,13 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @restaurants = Restaurant.all
-  end
+    case params[:filter]
+    when "fave" then @restaurants = current_user.restaurants.fave
+    when "archived" then @restaurants = current_user.restaurants.archived
+    when "not_tried" then @restaurants = current_user.restaurants.new
+    else @restaurants = current_user.restaurants.active
+    end #case
+  end #index
 
   # GET /restaurants/1
   # GET /restaurants/1.json
@@ -28,6 +33,7 @@ class RestaurantsController < ApplicationController
   # POST /restaurants.json
   def create
     @restaurant = Restaurant.new(restaurant_params)
+    @restaurant.user = current_user
     if @restaurant.save
       redirect_to @restaurant, notice: "Restaurant successfully created!"
     else
@@ -58,7 +64,7 @@ class RestaurantsController < ApplicationController
     end
 
     def restaurant_params
-      params.require(:restaurant).permit(:name, :street, :city, :state, :zip, :phone, :website, :image_file_name, :price, :fave, :archive, category_ids: [])
+      params.require(:restaurant).permit(:name, :street, :city, :state, :zip, :phone, :website, :image_file_name, :price, :fave, :archive, :user_id, category_ids: [])
     end #restaurant_params
 
 end #RestaurantsController

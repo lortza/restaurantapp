@@ -1,7 +1,7 @@
 class Dish < ActiveRecord::Base
   belongs_to :restaurant
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true
 end #Dish
 
 # == Schema Information
