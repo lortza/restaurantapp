@@ -20,7 +20,7 @@
   <tbody>
     <% @restaurants.each do |restaurant| %>
       <tr>
-        <td><%= image_tag(restaurant.image_file_name) %></td>
+        <td><%= image_for(restaurant) %></td>
         <td><%= link_to restaurant.name, restaurant %></td>
         <td><%= restaurant.street %><br>
         <%= restaurant.address_secondline %></td>

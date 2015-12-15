@@ -28,7 +28,7 @@
   </ul>
 <p>
   <strong>Image file name:</strong>
-  <%= image_tag(@restaurant.image_file_name) %>
+  <%= image_for(@restaurant) %>
   [placeholder image code tbd]
 </p>
 
@@ -50,14 +50,20 @@
 </p>
 
 <p><strong>Favorite Dishes:</strong></p>
+<p><%= link_to "Add a Dish", new_restaurant_dish_path(@restaurant) %></p>
 <ul>
     <% @dishes.order("name").each do |dish| %>
-      <li><%= dish.name %></li>
+      <li><%= dish.name %> | links | </li>
     <% end %> <!-- dishes -->
   </ul>
 
 <p><strong>Recent Visits:</strong></p>
-[outing code tbd]
+<p><%= link_to "Add a Visit", new_restaurant_outing_path(@restaurant) %></p>
+  <ul>
+    <% @outings.order("date DESC").each do |outing| %>
+      <li><%= outing.date %><% if outing.note? %>, <%= outing.note %> <% end %> | links | </li>
+    <% end %> <!-- outings -->
+  </ul>
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>
