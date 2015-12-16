@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
     user && user.authenticate(password)
   end #authenticate
 
+  
+
 end #User
 
 # == Schema Information

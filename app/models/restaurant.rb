@@ -21,6 +21,15 @@ class Restaurant < ActiveRecord::Base
     "#{city}, #{state} #{zip}" 
   end #address_secondline
 
+  # def untried_restaurants(restaurants)
+  #   untried = []
+  #   restaurants.each do |restaurant|
+  #     unless restaurant.outings.size > 0
+  #       untried << restaurant
+  #     end #unless
+  #   end #each
+  #   untried.size
+  # end #untried_restaurants(restaurants)
   
     
 
