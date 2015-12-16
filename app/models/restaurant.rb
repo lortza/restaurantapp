@@ -15,26 +15,13 @@ class Restaurant < ActiveRecord::Base
   scope :fave, -> { where(fave: true) }
   scope :active, -> { where(archive: false) }
   scope :archived, -> { where(archive: true) }
-  #scope :not_tried, ->(restaurant) { where(restaurant.outings.size < 1) }
+  scope :not_tried, -> { where(untried_restaurants(current_user.restaurants)) }
+  #scope :beenawhile, -> { where(current_user.restaurants.outings.last > 4.months.ago) }
 
   def address_secondline
     "#{city}, #{state} #{zip}" 
   end #address_secondline
 
-  # def untried_restaurants(restaurants)
-  #   untried = []
-  #   restaurants.each do |restaurant|
-  #     unless restaurant.outings.size > 0
-  #       untried << restaurant
-  #     end #unless
-  #   end #each
-  #   untried.size
-  # end #untried_restaurants(restaurants)
-  
-    
-
-    
-    
 end #Restaurant
 
 # == Schema Information

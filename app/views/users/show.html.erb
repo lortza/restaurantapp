@@ -37,6 +37,13 @@
   <%= untried_restaurant_count(@restaurants) %>
 </p>
 
+TEMPORARY LISTING
+<ul>
+<% untried_restaurants(@restaurants).each do |restaurant| %>
+  <li><%= link_to restaurant.name, restaurant %></li>
+<% end %> <!-- each -->
+</ul>
+
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
