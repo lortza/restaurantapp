@@ -16,13 +16,19 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
-  </div>
-  <div class="field">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
+  <% if @user.new_record? %>
+    <div class="field">
+    <p>Enter a username that will be your custom URL. You will not be able to change this later.</p>
+      <%= f.label :username %><br>
+      <%= f.text_field :username %>
+  <% else %>
+    <%= f.label :username, "Your Custom URL" %>: 
+    https://localhost:3000/users/<%= @user.name %>
+    </div><!-- field -->
+  <% end %><!-- if new user -->
   <div class="field">
     <%= f.label :password %><br>
     <%= f.password_field :password %>

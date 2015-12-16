@@ -15,6 +15,12 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+  <% unless @restaurant.new_record? %>
+    <div class="field">
+      <%= f.label :slug %>
+      <%= f.text_field :slug, size: 30 %>
+    </div> <!-- field -->
+  <% end %>
   <div class="field">
     <%= f.label :street %><br>
     <%= f.text_field :street %>

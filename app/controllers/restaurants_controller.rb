@@ -38,8 +38,8 @@ class RestaurantsController < ApplicationController
       redirect_to @restaurant, notice: "Restaurant successfully created!"
     else
       render :new
-    end
-  end
+    end #if
+  end #create
 
   # PATCH/PUT /restaurants/1
   # PATCH/PUT /restaurants/1.json
@@ -60,11 +60,11 @@ class RestaurantsController < ApplicationController
 
   private
     def set_restaurant
-      @restaurant = Restaurant.find(params[:id])
-    end
+      @restaurant = Restaurant.find_by!(slug: params[:id])
+    end #set_restaurant
 
     def restaurant_params
-      params.require(:restaurant).permit(:name, :street, :city, :state, :zip, :phone, :website, :image_file_name, :price, :fave, :archive, :user_id, category_ids: [])
+      params.require(:restaurant).permit(:name, :street, :city, :state, :zip, :phone, :website, :image_file_name, :price, :fave, :archive, :user_id, :slug, category_ids: [])
     end #restaurant_params
 
 end #RestaurantsController

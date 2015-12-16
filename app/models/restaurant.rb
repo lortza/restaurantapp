@@ -5,12 +5,16 @@ class Restaurant < ActiveRecord::Base
   has_many :categorizations, dependent: :destroy
   has_many :categories, through: :categorizations
 
-  PRICES = ["Low", "Average", "Above Average", "Expensive"]
+  before_validation :generate_slug
 
+  PRICES = ["Low", "Average", "Above Average", "Expensive"]
   validates :price, inclusion: { in: PRICES }
 
   STATES = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
   validates :state, inclusion: { in: STATES }
+
+  validates :name, presence: true, uniqueness: true
+  validates :slug, uniqueness: true
 
   scope :fave, -> { where(fave: true) }
   scope :active, -> { where(archive: false) }
@@ -21,6 +25,16 @@ class Restaurant < ActiveRecord::Base
   def address_secondline
     "#{city}, #{state} #{zip}" 
   end #address_secondline
+
+  def generate_slug
+    self.slug ||= name.parameterize if name
+  end #generate_slug
+
+  def to_param
+    slug
+  end #to_param
+
+
 
 end #Restaurant
 
@@ -43,6 +57,7 @@ end #Restaurant
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  user_id         :integer
+#  slug            :string
 #
 # Indexes
 #
