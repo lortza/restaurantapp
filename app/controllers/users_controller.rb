@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_signin, except: [:new, :create]
+  before_action :require_correct_user, only: [:edit, :update, :destroy]
+  before_action :require_admin, only: [:index, :destroy]
 
   # GET /users
   # GET /users.json
@@ -55,15 +58,15 @@ class UsersController < ApplicationController
 
   private
     def set_user
-      @user = User.find(params[:id])
+      @user = User.find_by!(username: params[:id])
     end
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :username, :password, :password_confirmation)
     end
 
     def require_correct_user
-      @user = User.find(params[:id])
+      @user = User.find_by!(username: params[:id])
         redirect_to root_url unless current_user?(@user)
     end #require_correct_user
 
