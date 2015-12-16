@@ -49,7 +49,7 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user.destroy
-    #session[:user_id] = nil
+    session[:user_id] = nil
     redirect_to users_url, alert: "#{@user.name}'s Account successfully deleted!"
   end #destroy
 

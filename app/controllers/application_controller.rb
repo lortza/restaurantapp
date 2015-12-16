@@ -21,4 +21,15 @@ private
   end #correct_user?
   helper_method :current_user?
 
+  def require_admin
+    unless current_user_admin?
+      redirect_to root_url, alert: "Whoops! Only Admins can access this page."
+    end #unless
+  end #require_admin
+
+  def current_user_admin?
+    current_user && current_user.admin?
+  end #current_user_admin?
+  helper_method :current_user_admin?
+
 end #ApplicationController

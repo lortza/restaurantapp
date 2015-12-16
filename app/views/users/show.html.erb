@@ -37,14 +37,11 @@
   <%= untried_restaurant_count(@restaurants) %>
 </p>
 
-TEMPORARY LISTING
+Move this to a scope on the index page
 <ul>
 <% untried_restaurants(@restaurants).each do |restaurant| %>
   <li><%= link_to restaurant.name, restaurant %></li>
 <% end %> <!-- each -->
 </ul>
 
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Account Settings', edit_user_path(@user) %>
