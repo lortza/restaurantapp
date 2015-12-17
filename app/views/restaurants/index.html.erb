@@ -4,37 +4,23 @@
 <%= link_to '+ Add a Restaurant', new_restaurant_path %>
 
 
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Restaurant</th>
-      <th>Phone</th>
-      <th>Website</th>
-      <th>Price</th>
-      <th colspan="2">Manage Listing</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td><%= image_for(restaurant) %></td>
-        <td class="fave"><%= link_to restaurant.name, restaurant %> 
+  <% @restaurants.each do |restaurant| %>
+    <article class="index-listing">
+      <div class="index-image">
+        <%= link_to image_for(restaurant), restaurant %>
+      </div><!-- index-image -->
+      <div class="index-info">
+        <h2 class="fave"><%= link_to restaurant.name, restaurant %> 
         <% if restaurant.fave? %>
           <%= link_to image_tag("fave.png", alt: "Favorite"), filtered_restaurants_path(:fave) %>
-          <% end %><br>
-        <%= restaurant.street %><br>
-        <%= restaurant.address_secondline %></td>
-        <td><%= restaurant.phone %></td>
-        <td><%= link_to restaurant.website, restaurant.website, target: "_blank" %></td>
-        <td><%= restaurant.price %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Delete', restaurant, method: :delete, data: { confirm: "Are you sure you want to delete " + restaurant.name + "? This action cannot be undone." } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+          <% end %></h2>
+        <p><%= restaurant.street %> (map)</p>
+        <p><%= restaurant.price %>, 
+          <% restaurant.categories.limit(3).each do |category| %>
+            <%= link_to category.name, category %>
+          <% end %><!-- categories each -->
+        </p>
+      </div> <!-- index-info -->
+    </article>
+  <% end %>
 

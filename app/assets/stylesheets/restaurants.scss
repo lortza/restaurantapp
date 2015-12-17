@@ -2,9 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-img {
-  width: 75px; 
-} /* img */
 
 .fave {
   img {
@@ -16,6 +13,25 @@ img {
 // .fave img {
 //   width: 25px; 
 // } /* .fave img */
+
+article.index-listing {
+  max-width: 400px;
+  overflow: auto;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+  .index-image {
+    float: left;
+    width: 30%; 
+    margin-right: 1em;
+    img {
+      width: 100%; 
+    } /* img */
+      
+  } /* index-image */ 
+} /* article.index-listing */
+  
+
+
 
 
   
