@@ -22,6 +22,10 @@
   </div>
 <% end %>
   <div class="actions">
-    <%= f.submit %>
-  </div>
+    <% if @category.new_record? %>
+      <%= f.submit "Create Category" %>
+    <% else %>
+      <%= f.submit "Update Category" %>
+    <% end %>
+  </div><!-- actions -->
 <% end %>

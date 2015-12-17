@@ -9,9 +9,14 @@
         <%= f.label :note %>
         <%= f.text_field :note, cols: 80, placeholder: "[outing note]" %>
       </div>
-
+      <div class="actions">
+        <% if @outing.new_record? %>
+          <%= f.submit "Create Visit" %>
+        <% else %>
+          <%= f.submit "Update Visit" %>
+        <% end %>
+      </div><!-- actions -->
     <p>
-      <%= f.submit 'Submit' %> 
       <%= link_to "Cancel", @restaurant, class: 'button' %>
     </p>
   </fieldset>

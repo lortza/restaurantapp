@@ -66,6 +66,10 @@
     <%= f.check_box :archive %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <% if @restaurant.new_record? %>
+      <%= f.submit "Create Restaurant" %>
+    <% else %>
+      <%= f.submit "Update Restaurant" %>
+    <% end %><!-- actions -->
   </div>
 <% end %>
