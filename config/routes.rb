@@ -17,6 +17,19 @@ Rails.application.routes.draw do
     resources :dishes
   end #restaurants
 
+  #### Considering nesting restaurants in users so that the url has the params for locking down the correct_user before action
+  # get "signup" => "users#new"
+  # resources :users do
+  #   get "restaurants/filter/:filter" => "restaurants#index", as: :filtered_restaurants
+
+  #   resources :restaurants do
+  #     resources :outings
+  #     resources :dishes
+  #   end #restaurants
+  # end #users
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

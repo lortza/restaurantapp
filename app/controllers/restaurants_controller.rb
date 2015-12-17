@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+  #before_action :require_correct_user
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
   # GET /restaurants

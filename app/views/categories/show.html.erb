@@ -1,14 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+<h2><%= @category.name %> Restaurants</h2>
 <ol>
   <% @restaurants.order("name").each do |restaurant| %>
   <li><%= link_to restaurant.name, restaurant %></li>
   <% end %> <!-- each do -->
 </ol>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
+
+<% if current_user_admin? %>
+  | <%= link_to 'Edit', edit_category_path(@category), class: 'button' %>
+  <%= link_to 'Delete', @category,
+              class: 'button',
+              method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>

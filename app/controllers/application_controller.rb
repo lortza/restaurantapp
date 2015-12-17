@@ -32,4 +32,9 @@ private
   end #current_user_admin?
   helper_method :current_user_admin?
 
+  def require_correct_user
+    @user = User.find_by!(username: params[:user_id]) 
+      redirect_to root_url unless current_user?(@user)
+  end #require_correct_user
+
 end #ApplicationController
