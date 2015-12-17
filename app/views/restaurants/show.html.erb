@@ -1,5 +1,16 @@
 <p id="notice"><%= notice %></p>
 
+<!-- ARCHIVE BUTTON ACTION -->
+<h3 class="archived">
+   <%= form_for(@restaurant, url: restaurant_path(@restaurant), :html => {class: "form-inline"}) do |f| %>
+     <% if @restaurant .archive %>
+       <%= f.hidden_field :archive, :value => false %>
+       Currently Archived. Make Active Again? 
+       <%= f.submit "Activate", class: "btn btn-success btn-xs" %>
+     <% end %>  <!-- if -->
+   <% end %> <!-- do -->
+   </h3>
+
 <h2 class="fave">
 <%= @restaurant.name %> 
 <% if @restaurant.fave? %>
