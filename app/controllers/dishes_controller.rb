@@ -37,7 +37,7 @@ private
   end #dish_params
 
   def set_restaurant
-    @restaurant = Restaurant.find(params[:restaurant_id])
+    @restaurant = Restaurant.find_by!(slug: params[:restaurant_id])
   end #restaurant
 
   # def set_dish #this is questionable
