@@ -64,11 +64,11 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :username, :password, :password_confirmation)
     end
-    #### Moved to Application Controller
-    # def require_correct_user
-    #   @user = User.find_by!(username: params[:id])
-    #     redirect_to root_url unless current_user?(@user)
-    # end #require_correct_user
+
+    def require_correct_user
+      @user = User.find_by!(username: params[:id])
+        redirect_to root_url unless current_user?(@user)
+    end #require_correct_user
 
     
 end #UsersController
