@@ -2,19 +2,30 @@
 
 <h1>Categories</h1>
 <% if current_user_admin? %>
-  <%= link_to 'New Category', new_category_path %>
+  <%= link_to ' Add a Category', new_category_path, class: "fa fa-plus btn btn-sm btn-default" %>
 <% end %><!-- current_user.admin? -->
 
-<table>
+<table class="table">
   <tbody>
-    <% @categories.order("name").each do |category| %>
+    <% @categories.each do |category| %>
       <tr>
-        <td><%= link_to category.name, category %> (<%= category.restaurants.size %>)</td>
+        <td>
+        <%= link_to category.name, category %> 
+        <ol>
+          <% category.restaurants.each do |restaurant| %>
+            <% if current_user.restaurants.include? restaurant %>
+              <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+            <% end %>
+          <% end %>
+        </ol>
+        </td>
         <% if current_user_admin? %>
-          <td><%= link_to 'Edit', edit_category_path(category) %></td>
-          <td><%= link_to 'Delete', category, method: :delete, data: { confirm: "Are you sure you want to delete " + category.name + "? This action cannot be undone." } %></td>
+          <td>(<%= category.restaurants.size %>)</td>
+          <td><%= link_to 'Edit', edit_category_path(category), class: "btn btn-xs btn-default" %></td>
+          <td><%= link_to 'Delete', category, method: :delete, data: { confirm: "Are you sure you want to delete " + category.name + "? This action cannot be undone." }, class: "btn btn-xs btn-default" %></td>
         <% end %><!-- current_user_admin? -->
       </tr>
     <% end %>
   </tbody>
 </table>
+
