@@ -15,22 +15,21 @@
   font-size: 0.33em;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  background-color: yellow;
-  padding: 3px 5px;
-  border-radius: 5px;
+  
+  
   a {
     &:link, &:visited {
-       color: orange; 
-     } /* &:link */
+       color: darkkhaki; 
+       background-color: khaki;
+       padding: 3px 5px;
+       border-radius: 5px;
+     } /* &:link, visited */
     &:hover {
-       color: darkorange;
        text-decoration: none;
-       background-color: yellow; 
-     } /* &:hover */
-        
-  } /* a */
-    
-      
+       // color: goldenrod;
+       background-color: palegoldenrod;
+     } /* &:hover */    
+  } /* a */   
 } /* .fave-icon */
 
 

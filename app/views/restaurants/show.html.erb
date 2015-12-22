@@ -14,7 +14,7 @@
 <h2 class="fave">
 <%= @restaurant.name %> 
 <% if @restaurant.fave? %>
-  <span class="fave-icon"><%= link_to "Fave", filtered_restaurants_path(:fave) %></span>
+  <span class="fave-icon"><%= link_to " Fave", filtered_restaurants_path(:fave), class: "fa fa-star" %></span>
 <% end %> <!-- fave? -->
 </h2>
 <p>
