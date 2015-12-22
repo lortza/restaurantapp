@@ -6,7 +6,7 @@
      <% if @restaurant .archive %>
        <%= f.hidden_field :archive, :value => false %>
        Currently Archived. Make Active Again? 
-       <%= f.submit "Activate", class: "btn btn-success btn-xs" %>
+       <%= f.submit "Activate", class: "btn btn-default btn-xs" %>
      <% end %>  <!-- if -->
    <% end %> <!-- do -->
    </h3>
@@ -47,7 +47,7 @@
    <%= form_for(@restaurant, url: restaurant_path(@restaurant), :html => {class: "form-inline"}) do |f| %>
      <% if @restaurant .fave %>
        <%= f.hidden_field :fave, :value => false %>
-       <%= f.submit "UnFave", class: "btn btn-success btn-xs" %>
+       <%= f.submit "UnFave", class: "btn btn-default btn-xs" %>
      <% else %>
        <%= f.hidden_field :fave, :value => true %>
        <%= f.submit "Fave", class: "btn btn-default btn-xs" %>
@@ -61,7 +61,7 @@
      <% if @restaurant .archive %>
        <%= f.hidden_field :archive, :value => false %>
        Currently Archived. Make Active Again? 
-       <%= f.submit "UnArchive", class: "btn btn-success btn-xs" %>
+       <%= f.submit "UnArchive", class: "btn btn-default btn-xs" %>
      <% else %>
        <%= f.hidden_field :archive, :value => true %>
        <%= f.submit "Archive", class: "btn btn-default btn-xs" %>
@@ -83,6 +83,6 @@
     <% end %> <!-- outings -->
   </ul>
 <hr>
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %> | 
-<%= link_to 'Delete', @restaurant, method: :delete, data: { confirm: "Are you sure you want to delete " + @restaurant.name + "? This action cannot be undone." } %>
+<%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-default btn-xs" %> 
+<%= link_to 'Back', restaurants_path, class: "btn btn-default btn-xs" %>  
+<%= link_to 'Delete', @restaurant, method: :delete, data: { confirm: "Are you sure you want to delete " + @restaurant.name + "? This action cannot be undone." }, class: "btn btn-default btn-xs" %>
