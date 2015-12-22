@@ -1,6 +1,8 @@
 class RestaurantsController < ApplicationController
   #before_action :require_correct_user
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user_restaurant, only: [:show]
+
 
   # GET /restaurants
   # GET /restaurants.json
@@ -63,6 +65,13 @@ class RestaurantsController < ApplicationController
     def set_restaurant
       @restaurant = Restaurant.find_by!(slug: params[:id])
     end #set_restaurant
+
+    def correct_user_restaurant
+      unless current_user.restaurants.include? @restaurant
+        redirect_to restaurants_url, notice: "Whoops! That wasn't your restaurant."
+      end #if 
+    end #correct_user_restaurant
+      
 
     def restaurant_params
       params.require(:restaurant).permit(:name, :street, :city, :state, :zip, :phone, :website, :image_file_name, :price, :fave, :archive, :user_id, :slug, category_ids: [])
