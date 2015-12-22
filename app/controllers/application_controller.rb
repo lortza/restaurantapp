@@ -23,7 +23,7 @@ private
 
   def require_admin
     unless current_user_admin?
-      redirect_to root_url, alert: "Whoops! Only Admins can access this page."
+      redirect_to root_url, alert: "Admin Access Only. Please sign in as an Admin user."
     end #unless
   end #require_admin
 
