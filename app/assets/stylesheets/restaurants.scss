@@ -5,14 +5,34 @@
 
 .fave {
   img {
-     width: 1em; 
+     width: 0.75em; 
      vertical-align: -2px;
    } /* img */
 } /* .fave */
 
-// .fave img {
-//   width: 25px; 
-// } /* .fave img */
+.fave-icon {
+  vertical-align: 1.33em;
+  font-size: 0.33em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background-color: yellow;
+  padding: 3px 5px;
+  border-radius: 5px;
+  a {
+    &:link, &:visited {
+       color: orange; 
+     } /* &:link */
+    &:hover {
+       color: darkorange;
+       text-decoration: none;
+       background-color: yellow; 
+     } /* &:hover */
+        
+  } /* a */
+    
+      
+} /* .fave-icon */
+
 
 article.index-listing {
   max-width: 400px;

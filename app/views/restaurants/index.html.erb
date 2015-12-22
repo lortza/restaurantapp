@@ -10,9 +10,9 @@
         <%= link_to image_for(restaurant), restaurant %>
       </div><!-- index-image -->
       <div class="index-info">
-        <h2 class="fave"><%= link_to restaurant.name, restaurant %> 
+        <h2><%= link_to restaurant.name, restaurant %> 
         <% if restaurant.fave? %>
-          <%= link_to image_tag("fave.png", alt: "Favorite"), filtered_restaurants_path(:fave) %>
+          <span class="fave-icon"><%= link_to "Fave", filtered_restaurants_path(:fave) %></span>
           <% end %></h2>
         <p><%= restaurant.street %> (map)</p>
         <p><%= restaurant.price %>, 

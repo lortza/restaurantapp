@@ -14,7 +14,7 @@
 <h2 class="fave">
 <%= @restaurant.name %> 
 <% if @restaurant.fave? %>
-  <%= link_to image_tag("fave.png", alt: "Favorite"), filtered_restaurants_path(:fave) %>
+  <span class="fave-icon"><%= link_to "Fave", filtered_restaurants_path(:fave) %></span>
 <% end %> <!-- fave? -->
 </h2>
 <p>
