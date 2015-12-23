@@ -6,35 +6,17 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Category.create!(name: "Thai")
-Category.create!(name: "Vegetarian")
-Category.create!(name: "Vegan")
-Category.create!(name: "Indian")
-Category.create!(name: "Pizza")
-Category.create!(name: "Food Truck")
-Category.create!(name: "Hipster")
-Category.create!(name: "Pho")
-Category.create!(name: "Vietnamese")
-Category.create!(name: "Mexican")
-Category.create!(name: "Colombian")
-Category.create!(name: "Ethiopian")
-Category.create!(name: "American")
-Category.create!(name: "Tapas")
-Category.create!(name: "Wine Bar")
-Category.create!(name: "Brewery")
-Category.create!(name: "Coffee Shop")
-Category.create!(name: "Bakery")
 
 User.create!(
-  name: "Allie",
-  username: "Allie",
-  email: "allie@email.com",
+  name: "Betty",
+  username: "betty",
+  email: "betty@email.com",
   password: "password"
   )
 
 Restaurant.create!([
   {
-    user_id: 1,
+    user_id: 2,
     name: "Abe's Kitchen",
     street: "123 Main Street",
     city: "Atlanta",
@@ -79,7 +61,7 @@ Outing.create!(
 
 Restaurant.create!([
   {
-    user_id: 1,
+    user_id: 2,
     name: "Bea's Table",
     street: "123 South Broad Street",
     city: "Beaverton",
@@ -124,7 +106,7 @@ Outing.create!(
 
 Restaurant.create!([
   {
-    user_id: 1,
+    user_id: 2,
     name: "Cora's Cafe",
     street: "123 North Broadway Street",
     city: "Calcutta",
