@@ -1,41 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-Category.create!(name: "Thai")
-Category.create!(name: "Vegetarian")
-Category.create!(name: "Vegan")
-Category.create!(name: "Indian")
-Category.create!(name: "Pizza")
-Category.create!(name: "Food Truck")
-Category.create!(name: "Hipster")
-Category.create!(name: "Pho")
-Category.create!(name: "Vietnamese")
-Category.create!(name: "Mexican")
-Category.create!(name: "Colombian")
-Category.create!(name: "Ethiopian")
-Category.create!(name: "American")
-Category.create!(name: "Tapas")
-Category.create!(name: "Wine Bar")
-Category.create!(name: "Brewery")
-Category.create!(name: "Coffee Shop")
-Category.create!(name: "Bakery")
-
 User.create!(
-  name: "Allie",
-  username: "Allie",
-  email: "allie@email.com",
-  password: "password"
+  name: "Carl",
+  username: "carl",
+  email: "carl@email.com",
+  password: "password",
+  admin: false
   )
 
 Restaurant.create!([
   {
-    user_id: 1,
-    name: "Abe's Kitchen",
+    user_id: 3,
+    name: "Cat's Paradise",
     street: "123 Main Street",
     city: "Atlanta",
     state: "GA", 
@@ -79,8 +53,8 @@ Outing.create!(
 
 Restaurant.create!([
   {
-    user_id: 1,
-    name: "Bea's Table",
+    user_id: 3,
+    name: "ChezChaz",
     street: "123 South Broad Street",
     city: "Beaverton",
     state: "AL", 
@@ -124,8 +98,8 @@ Outing.create!(
 
 Restaurant.create!([
   {
-    user_id: 1,
-    name: "Cora's Cafe",
+    user_id: 3,
+    name: "Coconut Cafe",
     street: "123 North Broadway Street",
     city: "Calcutta",
     state: "CA", 
