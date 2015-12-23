@@ -27,6 +27,7 @@ Category.create!(name: "Bakery")
 
 User.create!(
   name: "Allie",
+  username: "Allie",
   email: "allie@email.com",
   password: "password"
   )
