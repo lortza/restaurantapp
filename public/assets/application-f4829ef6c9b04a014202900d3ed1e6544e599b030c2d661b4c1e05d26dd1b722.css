@@ -1,0 +1,178 @@
+/* line 6, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.fave {
+  /* img */
+}
+/* line 7, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.fave img {
+  width: 0.75em;
+  vertical-align: -2px;
+}
+
+/* .fave */
+/* line 13, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.fave-icon {
+  vertical-align: 1.33em;
+  font-size: 0.33em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  /* a */
+}
+/* line 20, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.fave-icon a {
+  /* &:link, visited */
+  /* &:hover */
+}
+/* line 21, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.fave-icon a:link, .fave-icon a:visited {
+  color: darkkhaki;
+  background-color: khaki;
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+/* line 27, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.fave-icon a:hover {
+  text-decoration: none;
+  background-color: palegoldenrod;
+}
+
+/* .fave-icon */
+/* line 36, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+article.index-listing {
+  max-width: 400px;
+  overflow: auto;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+  /* index-image */
+}
+/* line 41, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+article.index-listing .index-image {
+  float: left;
+  width: 30%;
+  margin-right: 1em;
+  /* img */
+}
+/* line 45, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+article.index-listing .index-image img {
+  width: 100%;
+}
+
+/* article.index-listing */
+/* line 51, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.archived {
+  color: white;
+  background-color: red;
+}
+
+/* .archived */
+/* line 1, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 9, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 15, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 21, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 24, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 28, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 35, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 40, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 44, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 50, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 58, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 69, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+
+
+
+
+
+
+ */
+
+
+
+ a:link, a:visited, a:hover, a:active {
+  color: black;
+ }
+
+ a:hover {
+  text-decoration: none;
+  background-color: white;
+ }
