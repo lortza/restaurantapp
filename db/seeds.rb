@@ -6,17 +6,35 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Category.create!(name: "Thai")
+Category.create!(name: "Vegetarian")
+Category.create!(name: "Vegan")
+Category.create!(name: "Indian")
+Category.create!(name: "Pizza")
+Category.create!(name: "Food Truck")
+Category.create!(name: "Hipster")
+Category.create!(name: "Pho")
+Category.create!(name: "Vietnamese")
+Category.create!(name: "Mexican")
+Category.create!(name: "Colombian")
+Category.create!(name: "Ethiopian")
+Category.create!(name: "American")
+Category.create!(name: "Tapas")
+Category.create!(name: "Wine Bar")
+Category.create!(name: "Brewery")
+Category.create!(name: "Coffee Shop")
+Category.create!(name: "Bakery")
 
 User.create!(
-  name: "Betty",
-  username: "betty",
-  email: "betty@email.com",
+  name: "Allie",
+  username: "Allie",
+  email: "allie@email.com",
   password: "password"
   )
 
 Restaurant.create!([
   {
-    user_id: 2,
+    user_id: 1,
     name: "Abe's Kitchen",
     street: "123 Main Street",
     city: "Atlanta",
@@ -24,7 +42,7 @@ Restaurant.create!([
     zip: "73653",
     phone: "505-555-5555",
     website: "http://www.website.com",
-    price: "Average",
+    price: "$$",
     image_file_name: "http://resizer.otstatic.com/v1/fDzI465IL8%2B687zSupRS4Q/23684405.jpg",
     fave: false,
     archive: false
@@ -61,7 +79,7 @@ Outing.create!(
 
 Restaurant.create!([
   {
-    user_id: 2,
+    user_id: 1,
     name: "Bea's Table",
     street: "123 South Broad Street",
     city: "Beaverton",
@@ -69,7 +87,7 @@ Restaurant.create!([
     zip: "73653",
     phone: "505-555-5555",
     website: "http://www.website.com",
-    price: "Average",
+    price: "$$",
     image_file_name: "http://torontolife.com/wp-content/uploads/2014/11/wilbur-mexicana-toronto-restaurants-13-200x200.jpg",
     fave: false,
     archive: false
@@ -106,7 +124,7 @@ Outing.create!(
 
 Restaurant.create!([
   {
-    user_id: 2,
+    user_id: 1,
     name: "Cora's Cafe",
     street: "123 North Broadway Street",
     city: "Calcutta",
@@ -114,7 +132,7 @@ Restaurant.create!([
     zip: "73653",
     phone: "505-555-5555",
     website: "http://www.website.com",
-    price: "Low",
+    price: "$",
     image_file_name: "https://c.zmtcdn.com/data/pictures/5/17874525/67a0a3f714f13184e39664903123ecd1_200_thumb.png",
     fave: true,
     archive: false
