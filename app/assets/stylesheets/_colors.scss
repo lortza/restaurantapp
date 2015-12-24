@@ -1,15 +1,31 @@
+/* https://color.adobe.com/Jumping-Fish---New-Site-color-theme-7355512/ */
+// orange #E26F59
+// dark blue #04B2D9
+// light blue #83C1C0
+// yellow #FFDF71
+// gray #424747
+
+$navbar-dropdown-button: #E26F59;
+$navbar-primary: darken($navbar-dropdown-button, 10%);
+$navbar-secondary: lighten($navbar-dropdown-button, 20%);
+$navbar-text: #FFFFFF;
+
+$primary-link-color: #04B2D9;
+$secondary-link-colory: #83C1C0;
+$accent-color: #FFDF71;
+$primary-text-color: #444;
+$secondary-text-color: #424747;
+
+
 $primary-background-color: #F5F5F5;
 $secondary-background-color: #237CBE;
 $tertiary-background-color: lighten(#dcdbd2, 11%);
-$primary-text-color: #444;
-$secondary-text-color: #777;
-$primary-link-color: #2E6AA0;
-$secondary-link-color: #FFF;
 $errors-background-color: #FFC;
 $errors-text-color: #DC3D3D;
 $subdued-color: darken($primary-background-color, 20%);
 $flash-notice-color: #DBFFDD;
 $flash-alert-color:  #FFE1DE;
 $flash-danger-color: #FFA715;
-$accent-color: #FAFBFF;
 $fieldset-color: lighten($secondary-background-color, 50%);
+
+
