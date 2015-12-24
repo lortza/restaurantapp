@@ -29,6 +29,10 @@ class User < ActiveRecord::Base
     self.email = email.downcase 
   end #format_email
 
+  def gravatar_id 
+    Digest::MD5::hexdigest(email.downcase)
+  end #gravatar_id
+
 end #User
 
 # == Schema Information
