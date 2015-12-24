@@ -8,6 +8,11 @@
 /* title */
 .navbar-default .navbar-brand {
     color: $navbar-text;
+    img {
+      height: 33px; 
+      margin-right: 10px;
+    } /* img */
+      
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
