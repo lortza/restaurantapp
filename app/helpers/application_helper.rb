@@ -1,5 +1,13 @@
 module ApplicationHelper
 
+ def page_title
+   if content_for?(:title)
+     "RQ - #{content_for(:title)}"
+    else
+     "RestaurantQueue"
+   end #content_for
+ end #page_title
+
 private
   def untried_restaurants(restaurants)
     untried = []

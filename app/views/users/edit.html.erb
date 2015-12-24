@@ -1,10 +1,12 @@
-<h1>Editing <%= @user.name %>'s Profile</h1>
+<%= content_for(:title, "#{@user.name}'s Account Settings") %>
+
+<h1><%= @user.name %>'s Account Settings</h1>
 
 <%= render 'form' %>
 
+  <%= link_to 'Cancel', @user, class: "btn btn-xs btn-default" %> 
+  <%= link_to "Delete My Account", @user, method: :delete, data: { confirm: @user.name + '! Are you sure you want to delete your account? There is no undoing this action.' }, class: "btn btn-xs btn-default" %>
+
 <p>make delete available for only the curent user or the admin user</p>
-  <%= link_to 'Cancel', @user %> | 
-  <%= link_to "Delete My Account", @user, method: :delete, data: { confirm: @user.name + '! Are you sure you want to delete your account? There is no undoing this action.' } %>
-
-
+  
 
