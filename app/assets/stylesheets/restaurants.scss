@@ -43,7 +43,10 @@ article.index-listing {
     width: 30%; 
     margin-right: 1em;
     img {
-      width: 100%; 
+      width: 125px;
+      height: 125px;
+      overflow: hidden;
+      background: 50% 50% no-repeat; 
     } /* img */    
   } /* index-image */ 
 } /* article.index-listing */
