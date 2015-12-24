@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require layouts
+ *= require shared
  *= require sessions
  *= require categories
  *= require dishes
@@ -21,12 +22,3 @@
  *= require users
  */
 
-
- a:link, a:visited, a:hover, a:active {
-  color: black;
- }
-
- a:hover {
-  text-decoration: none;
-  background-color: white;
- }

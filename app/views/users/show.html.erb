@@ -3,7 +3,14 @@
 <p id="notice"><%= notice %></p>
 
 <h2>User Information</h2>
-<%= profile_image_for(@user) %>
+<% unless profile_image_for(@user).include? "https://secure.gravatar.com/avatar/e5c584dada3d2782af5c451aeb72287c" %>
+  <%= profile_image_for(@user) %>
+<% else %>
+  <div class="external-link">
+    <%= profile_image_for(@user) %>
+    <p><%= link_to "Add an Image via Gravatar", "https://en.gravatar.com/", target: "_blank" %></p>
+  </div> <!-- external-link -->
+<% end %>
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
@@ -47,4 +54,4 @@ Move this to a scope on the index page
 <% end %> <!-- each -->
 </ul>
 
-<%= link_to 'Account Settings', edit_user_path(@user) %>
+<%= link_to 'Account Settings', edit_user_path(@user), class: "btn btn-xs btn-default" %>

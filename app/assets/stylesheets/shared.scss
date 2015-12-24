@@ -1,0 +1,19 @@
+@import "colors";
+
+.external-link {
+  a:link, a:visited {
+  color: $primary-external-link;
+ } /* a a:link, a:visited */ 
+ a:hover, a:active {
+  color: $secondary-external-link;
+ } /* a a:hover, a:active */  
+} /* .external-link */
+
+ a:link, a:visited, a:hover, a:active {
+  color: black;
+ }
+
+ a:hover {
+  text-decoration: none;
+  background-color: white;
+ }
