@@ -1,3 +1,10 @@
+@import "colors";
+
+.nav-buffer {
+  height: 50px;
+  margin-bottom: 50px; 
+} /* nav */
+
 body {
   background-color: #fff;
   color: #333;
@@ -71,3 +78,5 @@ div {
     list-style: square;
   }
 }
+
+  
