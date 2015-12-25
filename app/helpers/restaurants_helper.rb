@@ -8,6 +8,22 @@ module RestaurantsHelper
     end #if
   end #image_for(restaurant)
 
+  def restaurant_filter_title
+    case params[:filter]
+    when "fave" then "Favorite Restaurants"
+    when "archived" then "Archived Restaurants"
+    when "not_tried" then "Restaurants To Try"
+    else "My Restaurants"
+    end #case
+  end #page_title
+
+  def show_all_button
+    unless restaurant_filter_title == "My Restaurants"
+      link_to 'Show All', restaurants_path, class: "btn btn-xs btn-default"
+    end #unless
+  end #show_all_button
+
+
   ###### Wanted to make a list on categories on the restaurant index and use truncate to limit the characters
   # def list_categories(restaurant)
   #   category_list = []
