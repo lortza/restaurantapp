@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "sessions#new"
+  root "restaurants#index"
   
   resources :categories
 
