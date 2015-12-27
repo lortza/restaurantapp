@@ -67,9 +67,12 @@ article.index-listing {
   width: 300px;
   height: 300px;
   overflow: hidden;
-  background: 50% 50% no-repeat; 
+  background: 50% 50% no-repeat;
   img {
-    width: 100%; 
+    min-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
   } /* img */
   h2 {
     color: white;
@@ -86,6 +89,5 @@ article.index-listing {
     
 } /* .showpage-image */
   
-
 
   
