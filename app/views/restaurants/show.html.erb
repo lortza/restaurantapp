@@ -13,15 +13,15 @@
    <% end %> <!-- do -->
    </h3>
 
-<h2 class="fave">
-<%= @restaurant.name %> 
-<% if @restaurant.fave? %>
-  <span class="fave-icon"><%= link_to " Fave", filtered_restaurants_path(:fave), class: "fa fa-star" %></span>
-<% end %> <!-- fave? -->
-</h2>
-<p>
+<div class="showpage-image">
   <%= image_for(@restaurant) %>
-</p>
+  <h2 class="fave">
+  <%= @restaurant.name %> 
+  <% if @restaurant.fave? %>
+    <span class="fave-icon"><%= link_to " Fave", filtered_restaurants_path(:fave), class: "fa fa-star" %></span>
+  <% end %> <!-- fave? -->
+  </h2>
+</div><!-- showpage-image -->
 <p>
   <%= @restaurant.street %><br>
   <%= @restaurant.address_secondline %><br>

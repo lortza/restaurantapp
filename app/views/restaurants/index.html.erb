@@ -2,28 +2,14 @@
 
 <p id="notice"><%= notice %></p>
 
+<div class="pull-right">
+  <%= link_to ' Add a Restaurant', new_restaurant_path, class: "fa fa-plus btn btn-sm btn-default" %> 
+</div> <!-- pull-right -->
+
 <h1><%= restaurant_filter_title %></h1>
 <%= show_all_button %>
-<%= link_to ' Add a Restaurant', new_restaurant_path, class: "fa fa-plus btn btn-sm btn-default" %>
-
 
   <% @restaurants.each do |restaurant| %>
-    <article class="index-listing">
-      <div class="index-image">
-        <%= link_to image_for(restaurant), restaurant %>
-      </div><!-- index-image -->
-      <div class="index-info">
-        <h2><%= link_to restaurant.name, restaurant %> 
-        <% if restaurant.fave? %>
-          <span class="fave-icon"><%= link_to " Fave", filtered_restaurants_path(:fave), class: "fa fa-star" %></span>
-          <% end %></h2>
-        <p><%= restaurant.street %> (map)</p>
-        <p><%= restaurant.price %>, 
-          <% restaurant.categories.limit(3).each do |category| %>
-            <%= link_to category.name, category %>
-          <% end %><!-- categories each -->
-        </p>
-      </div> <!-- index-info -->
-    </article>
+    <%= render :partial => "restaurant", :object => restaurant %>
   <% end %>
 

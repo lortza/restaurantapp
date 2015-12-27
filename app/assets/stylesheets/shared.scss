@@ -1,5 +1,11 @@
 @import "colors";
 
+h1, h2, h3, h4, h5, li, p {
+  font-family: 'Open Sans', sans-serif; 
+  font-weight: 300;
+} /* h1, h2, h3, h4, h5, li, p */
+  
+
 .external-link {
   a:link, a:visited {
   color: $primary-external-link;
@@ -17,3 +23,17 @@
   text-decoration: none;
   background-color: white;
  }
+
+
+/* DEFAULT STYLES TO BE MODIFIED OR REMOVED */
+ a {
+  color: #000;
+
+  &:visited {
+    color: #666;
+  }
+
+  &:hover {
+    color: $primary-external-link;
+  }
+}

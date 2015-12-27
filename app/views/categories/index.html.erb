@@ -2,24 +2,29 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Categories</h1>
-<% if current_user_admin? %>
-  <%= link_to ' Add a Category', new_category_path, class: "fa fa-plus btn btn-sm btn-default" %>
-<% end %><!-- current_user.admin? -->
+<div class="pull-right">
+  <% if current_user_admin? %>
+    <%= link_to ' Add a Category', new_category_path, class: "fa fa-plus btn btn-sm btn-default" %>
+  <% end %><!-- current_user.admin? --> 
+</div> <!-- pull-right -->
 
-<table class="table">
+
+<h1>Categories</h1>
+
+<div id="categories">
+  <table class="table">
   <tbody>
     <% @categories.each do |category| %>
       <tr>
         <td>
-        <%= link_to category.name, category %> 
-        <ol>
-          <% category.restaurants.each do |restaurant| %>
+        <p class="category-name"><%= link_to category.name, category %> <p>
+        <ul>
+          <% category.restaurants.order("name").each do |restaurant| %>
             <% if current_user.restaurants.include? restaurant %>
-              <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+              <li><%= link_to restaurant.name, restaurant %></li>
             <% end %>
           <% end %>
-        </ol>
+        </ul>
         </td>
         <% if current_user_admin? %>
           <td>(<%= category.restaurants.size %>)</td>
@@ -29,5 +34,7 @@
       </tr>
     <% end %>
   </tbody>
+</div><!--categories -->
+
 </table>
 

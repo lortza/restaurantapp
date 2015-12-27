@@ -3,14 +3,12 @@
 <p id="notice"><%= notice %></p>
 
 <h2><%= @category.name %> Restaurants</h2>
-<ol>
 
   <% @restaurants.order("name").each do |restaurant| %>
     <% if current_user.restaurants.include? restaurant %>
-     <li><%= link_to restaurant.name, restaurant %></li>
+     <%= render :partial => "restaurants/restaurant", :object => restaurant %>
     <% end %> <!-- if -->
   <% end %> <!-- each do -->
-</ol>
 
 <%= link_to 'Back', categories_path, class: "btn btn-xs btn-default" %>
 

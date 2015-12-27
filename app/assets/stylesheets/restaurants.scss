@@ -35,14 +35,18 @@
 
 
 article.index-listing {
-  max-width: 400px;
+  background-color: $content-background;
+  max-width: 500px;
   overflow: auto;
-  margin-bottom: 10px;
-  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+  h1 {
+    font-size: 80%; 
+  } /* h1 */
+    
   .index-image {
     float: left;
-    width: 30%; 
-    margin-right: 1em;
+    width: 125px; 
+    margin-right: 1.5em;
     img {
       width: 125px;
       height: 125px;
@@ -56,6 +60,31 @@ article.index-listing {
   color: white;
   background-color: red;
 } /* .archived */
+
+
+.showpage-image {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  background: 50% 50% no-repeat; 
+  img {
+    width: 100%; 
+  } /* img */
+  h2 {
+    color: white;
+    background-color:rgba(4, 178, 217, 0.75);
+    padding: 5px 25px 5px 5px;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 0px;
+    width: 300px;
+    overflow: hidden;
+
+  } /* h2 */
+    
+    
+} /* .showpage-image */
   
 
 
