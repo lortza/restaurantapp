@@ -55,7 +55,8 @@
     <%= f.collection_check_boxes(:category_ids, Category.all.order(name: :asc), :id, :name) %>
   </div> <!-- form-columns3 -->
   <div class="field">
-    <%= f.label :image_file_name %><br>
+    <%= f.label :image_file_name, "Restaurant Image" %><br>
+    <%= image_tag @restaurant.image_file_name, class: "form-image" if @restaurant.image_file_name.present?  %>
     <%= f.text_field :image_file_name %>
   </div>
   <div class="field">
@@ -70,7 +71,7 @@
     <%= f.label :archive %><br>
     <%= f.check_box :archive %>
   </div>
-  
+
   <div class="button-buffer"></div> <!-- button-buffer -->
     
   <div class="actions">
