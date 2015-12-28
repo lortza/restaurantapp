@@ -27,6 +27,18 @@ module RestaurantsHelper
      restaurant.outings.size == 0
   end  #untried?
 
+  def corner_banner(restaurant)
+    if restaurant.archive?
+       image_tag "corner_archived.png"
+     elsif restaurant.fave?
+       image_tag "corner_fave.png"
+     elsif untried?(restaurant)
+       image_tag "corner_new.png"
+     else
+     end #if
+  end #corner_banner
+    
+
 
   ###### Wanted to make a list on categories on the restaurant index and use truncate to limit the characters
   # def list_categories(restaurant)

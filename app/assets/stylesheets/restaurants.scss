@@ -56,8 +56,9 @@ article.index-listing {
   background-color: $content-background;
   max-width: 500px;
   overflow: auto;
-  margin-bottom: 20px;
+  margin-bottom: 20px; 
   .index-image {
+    position: relative;
     float: left;
     width: 125px; 
     margin-right: 1.5em;
@@ -66,7 +67,7 @@ article.index-listing {
       height: 125px;
       overflow: hidden;
       background: 50% 50% no-repeat; 
-    } /* img */    
+    } /* img */   
   } /* index-image */ 
 } /* article.index-listing */
 
@@ -75,9 +76,23 @@ article.index-listing {
   background-color: red;
 } /* .archived */
 
+.image-container {
+  position: relative;
+  z-index: 0; 
+} /* .image-container */
+  
+.corner-banner img {
+  z-index: 2;
+  position: absolute;
+  width: 10%;
+  height: auto;
+  top: -2.5%;
+  left: -0.75%; 
+} /* .corner-banner */ 
 
 .showpage-image {
   position: relative;
+  z-index: 1;
   width: 300px;
   height: 300px;
   overflow: hidden;
