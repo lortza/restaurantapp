@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'will_paginate', '~> 3.0.6'
+
 gem "annotate"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
