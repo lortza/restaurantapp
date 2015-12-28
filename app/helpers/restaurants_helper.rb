@@ -23,6 +23,10 @@ module RestaurantsHelper
     end #unless
   end #show_all_button
 
+  def untried?(restaurant)
+     restaurant.outings.size == 0
+  end  #untried?
+
 
   ###### Wanted to make a list on categories on the restaurant index and use truncate to limit the characters
   # def list_categories(restaurant)

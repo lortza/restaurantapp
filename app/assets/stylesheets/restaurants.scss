@@ -16,8 +16,6 @@
   font-size: 0.33em;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  
-  
   a {
     &:link, &:visited {
        color: darkkhaki; 
@@ -33,16 +31,32 @@
   } /* a */   
 } /* .fave-icon */
 
+.untried-icon {
+  vertical-align: 1.33em;
+  font-size: 0.33em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px; 
+  a {
+    &:link, &:visited {
+       color: darken(#04B2D9, 10%); 
+       background-color: #04B2D9;
+       padding: 3px 5px;
+       border-radius: 5px;
+     } /* &:link, visited */
+    &:hover {
+       text-decoration: none;
+       background-color: #83C1C0;
+     } /* &:hover */    
+  } /* a */ 
+} /* .untried-icon */
+
+
 
 article.index-listing {
   background-color: $content-background;
   max-width: 500px;
   overflow: auto;
   margin-bottom: 20px;
-  h1 {
-    font-size: 80%; 
-  } /* h1 */
-    
   .index-image {
     float: left;
     width: 125px; 

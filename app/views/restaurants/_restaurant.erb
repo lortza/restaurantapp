@@ -4,9 +4,13 @@
       </div><!-- index-image -->
       <div class="index-info">
         <h2><%= link_to restaurant.name, restaurant %> 
+          <% if untried?(restaurant) %>
+            <span class="untried-icon"><%= link_to " New", filtered_restaurants_path(:fave), class: "fa fa-star" %></span>
+          <% end %><!-- untried? -->
         <% if restaurant.fave? %>
-          <span class="fave-icon"><%= link_to " Fave", filtered_restaurants_path(:fave), class: "fa fa-star" %></span>
-          <% end %></h2>
+          <span class="fave-icon"><%= link_to " Fave", filtered_restaurants_path(:fave), class: "fa fa-trophy" %></span>
+          <% end %><!-- fave? -->
+          </h2>
         <p><%= restaurant.street %> (map)</p>
         <p><%= restaurant.price %>, 
           <% restaurant.categories.limit(3).each do |category| %>
