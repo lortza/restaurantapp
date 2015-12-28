@@ -6,18 +6,20 @@
       <ul>
       <% @restaurant.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
+      <% end %><!-- do -->
       </ul>
     </div>
-  <% end %>
+  <% end %><!-- if errors -->
+  <fieldset>
 
+  <ol>
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
   <% unless @restaurant.new_record? %>
     <div class="field">
-      <%= f.label :slug %>
+      <%= f.label :slug, "Custom URL" %><br>
       <%= f.text_field :slug, size: 30 %>
     </div> <!-- field -->
   <% end %>
@@ -31,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :state %><br>
-    <%= f.text_field :state %>
+    <%= f.select :state, Restaurant::STATES, prompt: "Pick one" %>
   </div>
   <div class="field">
     <%= f.label :zip %><br>
@@ -45,10 +47,13 @@
     <%= f.label :website %><br>
     <%= f.text_field :website %>
   </div>
-  <div>
+  <div class="field">
     <%= f.label :category, "Category" %><br>
-    <%= f.collection_check_boxes(:category_ids, Category.all.order(name: :asc), :id, :name) %>
+    <p>Please select at least 1 Category:</p>
   </div>
+  <div class="form-columns3">
+    <%= f.collection_check_boxes(:category_ids, Category.all.order(name: :asc), :id, :name) %>
+  </div> <!-- form-columns3 -->
   <div class="field">
     <%= f.label :image_file_name %><br>
     <%= f.text_field :image_file_name %>
@@ -65,11 +70,21 @@
     <%= f.label :archive %><br>
     <%= f.check_box :archive %>
   </div>
+  
+  <div class="button-buffer"></div> <!-- button-buffer -->
+    
   <div class="actions">
     <% if @restaurant.new_record? %>
       <%= f.submit "Create Restaurant" %>
     <% else %>
       <%= f.submit "Update Restaurant" %>
     <% end %><!-- actions -->
+    <% if @restaurant.new_record? %>
+      <%= link_to 'Cancel', restaurants_path, class: "btn btn-xs btn-default" %>
+    <% else %>
+      <%= link_to 'Cancel', @restaurant, class: "btn btn-xs btn-default" %>
+    <% end %><!-- new record? -->
   </div>
-<% end %>
+  </fieldset>
+<% end %><!-- form for -->
+

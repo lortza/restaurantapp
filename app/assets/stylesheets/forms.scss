@@ -1,0 +1,66 @@
+@import "colors";
+
+fieldset {
+  font-family: 'Open Sans', sans-serif;
+
+  .field {
+    margin-left: -38px; 
+    label {
+      margin-bottom: -15px;
+      margin-top: 20px;
+    }/* label */
+  } /* .field */
+    
+
+  input,
+  label {
+    display: block;
+  }/* label */
+
+  input,
+  textarea {
+    padding: 5px;
+  }/* textarea */
+
+  input[type="checkbox"] {
+    width: 1em;
+    height: 1em;
+    float: left; 
+    margin-right: 2px;
+    vertical-align: center;
+  }/* imput */
+
+  .form-columns3 {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+  }
+
+  div.field_with_errors {
+    display: inline;
+    label {
+      color: $errors-text-color;
+    }
+    input, textarea {
+      background: $errors-background-color;
+    }
+  }
+
+  p {
+    input {
+      display: inline-block;
+    }/* input */
+  }/* p */
+
+  .actions {
+    margin-left: -38px; 
+  } /* .actions */
+    
+
+  .button-buffer {
+    clear: both;
+    margin-bottom: 20px; 
+  } /* .button-buffer */
+    
+}/* fieldset */
+
