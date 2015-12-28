@@ -9,7 +9,7 @@
 <h1><%= restaurant_filter_title %></h1>
 <%= show_all_button %>
 
-  <% @restaurants.each do |restaurant| %>
+  <% @restaurants.order("created_at DESC").each do |restaurant| %>
     <%= render :partial => "restaurant", :object => restaurant %>
   <% end %>
 
