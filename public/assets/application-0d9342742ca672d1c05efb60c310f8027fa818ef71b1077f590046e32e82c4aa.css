@@ -1,0 +1,525 @@
+/* https://color.adobe.com/Jumping-Fish---New-Site-color-theme-7355512/ */
+/* line 5, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/categories.scss */
+#categories {
+  /* .category-name */
+}
+/* line 6, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/categories.scss */
+#categories .category-name {
+  font-size: 1em;
+  font-weight: 600;
+}
+
+/* #categories */
+/* https://color.adobe.com/Jumping-Fish---New-Site-color-theme-7355512/ */
+/* line 3, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/forms.scss */
+fieldset {
+  font-family: 'Open Sans', sans-serif;
+  /* .field */
+  /* label */
+  /* textarea */
+  /* imput */
+  /* p */
+  /* .actions */
+  /* .button-buffer */
+}
+/* line 6, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/forms.scss */
+fieldset .field {
+  margin-left: -38px;
+  /* label */
+  /* .form-image */
+}
+/* line 8, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/forms.scss */
+fieldset .field label {
+  margin-bottom: -15px;
+  margin-top: 20px;
+}
+/* line 12, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/forms.scss */
+fieldset .field .form-image {
+  width: 100px;
+}
+/* line 19, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/forms.scss */
+fieldset input,
+fieldset label {
+  display: block;
+}
+/* line 24, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/forms.scss */
+fieldset input,
+fieldset textarea {
+  padding: 5px;
+}
+/* line 29, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/forms.scss */
+fieldset input[type="checkbox"] {
+  width: 1em;
+  height: 1em;
+  float: left;
+  margin-right: 2px;
+  vertical-align: center;
+}
+/* line 37, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/forms.scss */
+fieldset .form-columns3 {
+  -webkit-column-count: 3;
+  /* Chrome, Safari, Opera */
+  -moz-column-count: 3;
+  /* Firefox */
+  column-count: 3;
+}
+/* line 43, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/forms.scss */
+fieldset div.field_with_errors {
+  display: inline;
+}
+/* line 45, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/forms.scss */
+fieldset div.field_with_errors label {
+  color: #DC3D3D;
+}
+/* line 48, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/forms.scss */
+fieldset div.field_with_errors input, fieldset div.field_with_errors textarea {
+  background: #FFC;
+}
+/* line 53, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/forms.scss */
+fieldset p {
+  /* input */
+}
+/* line 54, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/forms.scss */
+fieldset p input {
+  display: inline-block;
+}
+/* line 59, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/forms.scss */
+fieldset .actions {
+  margin-left: -38px;
+}
+/* line 64, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/forms.scss */
+fieldset .button-buffer {
+  clear: both;
+  margin-bottom: 20px;
+}
+
+/* fieldset */
+/* https://color.adobe.com/Jumping-Fish---New-Site-color-theme-7355512/ */
+/* navbar */
+/* line 4, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+.navbar-default {
+  background-color: #da492e;
+  border-color: #E7E7E7;
+}
+
+/* title */
+/* line 9, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+.navbar-default .navbar-brand {
+  color: #FFFFFF;
+  /* img */
+}
+/* line 11, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+.navbar-default .navbar-brand img {
+  height: 33px;
+  margin-right: 10px;
+}
+
+/* line 17, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #f1bab0;
+}
+
+/* link */
+/* line 22, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+.navbar-default .navbar-nav > li > a {
+  color: #FFFFFF;
+}
+
+/* line 25, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #f1bab0;
+}
+
+/* line 29, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #FFFFFF;
+  background-color: #da492e;
+}
+
+/* line 35, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #FFFFFF;
+  background-color: #E26F59;
+}
+
+/* caret */
+/* line 42, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+  border-top-color: #FFFFFF;
+  border-bottom-color: #FFFFFF;
+}
+
+/* line 46, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+  border-top-color: #f1bab0;
+  border-bottom-color: #f1bab0;
+}
+
+/* line 51, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+.navbar-default .navbar-nav > .open > a .caret,
+.navbar-default .navbar-nav > .open > a:hover .caret,
+.navbar-default .navbar-nav > .open > a:focus .caret {
+  border-top-color: #f1bab0;
+  border-bottom-color: #f1bab0;
+}
+
+/* mobile version */
+/* line 58, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+.navbar-default .navbar-toggle {
+  border-color: #FFFFFF;
+  /* white box */
+}
+
+/* line 61, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #da492e;
+}
+
+/* line 65, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #FFFFFF;
+  /* white horiz lines */
+}
+
+@media (max-width: 767px) {
+  /* line 69, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #FFFFFF;
+  }
+
+  /* line 72, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #f1bab0;
+  }
+}
+/* line 79, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+.nav-buffer {
+  height: 50px;
+  margin-bottom: 50px;
+}
+
+/* nav */
+/* line 84, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+body {
+  background-color: #fff8e1;
+  color: #444;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 93, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 102, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 107, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+#notice {
+  color: green;
+}
+
+/* line 111, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 117, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 125, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 136, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/layouts.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+/* https://color.adobe.com/Jumping-Fish---New-Site-color-theme-7355512/ */
+/* line 7, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.fave {
+  /* img */
+}
+/* line 8, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.fave img {
+  width: 0.75em;
+  vertical-align: -2px;
+}
+
+/* .fave */
+/* line 14, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.fave-icon {
+  vertical-align: 1.33em;
+  font-size: 0.33em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  /* a */
+}
+/* line 19, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.fave-icon a {
+  /* &:link, visited */
+  /* &:hover */
+}
+/* line 20, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.fave-icon a:link, .fave-icon a:visited {
+  color: darkkhaki;
+  background-color: khaki;
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+/* line 26, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.fave-icon a:hover {
+  text-decoration: none;
+  background-color: palegoldenrod;
+}
+
+/* .fave-icon */
+/* line 34, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.untried-icon {
+  vertical-align: 1.33em;
+  font-size: 0.33em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  /* a */
+}
+/* line 39, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.untried-icon a {
+  /* &:link, visited */
+  /* &:hover */
+}
+/* line 40, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.untried-icon a:link, .untried-icon a:visited {
+  color: #0389a7;
+  background-color: #04B2D9;
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+/* line 46, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.untried-icon a:hover {
+  text-decoration: none;
+  background-color: #83C1C0;
+}
+
+/* .untried-icon */
+/* line 55, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+article.index-listing {
+  background-color: #FFFFFF;
+  max-width: 500px;
+  overflow: auto;
+  margin-bottom: 20px;
+  /* index-image */
+}
+/* line 60, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+article.index-listing .index-image {
+  position: relative;
+  float: left;
+  width: 125px;
+  margin-right: 1.5em;
+  /* img */
+}
+/* line 65, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+article.index-listing .index-image img {
+  width: 125px;
+  height: 125px;
+  overflow: hidden;
+  background: 50% 50% no-repeat;
+}
+
+/* article.index-listing */
+/* line 74, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.archived {
+  color: white;
+  background-color: red;
+}
+
+/* .archived */
+/* line 79, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.image-container {
+  position: relative;
+  z-index: 0;
+}
+
+/* .image-container */
+/* line 84, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.corner-banner img {
+  z-index: 2;
+  position: absolute;
+  width: 10%;
+  height: auto;
+  top: -2.5%;
+  left: -0.75%;
+}
+
+/* .corner-banner */
+/* line 93, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.showpage-image {
+  position: relative;
+  z-index: 1;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  background: 50% 50% no-repeat;
+  /* img */
+  /* h2 */
+}
+/* line 100, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.showpage-image img {
+  min-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+/* line 106, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/restaurants.scss */
+.showpage-image h2 {
+  color: white;
+  background-color: rgba(4, 178, 217, 0.75);
+  padding: 5px 25px 5px 5px;
+  position: absolute;
+  bottom: 0px;
+  margin-bottom: 0px;
+  width: 300px;
+  overflow: hidden;
+}
+
+/* .showpage-image */
+/* https://color.adobe.com/Jumping-Fish---New-Site-color-theme-7355512/ */
+/* line 3, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/sessions.scss */
+.session {
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+  padding: 2% 10%;
+  margin: 0 auto;
+  /* .button */
+  /* .btn */
+}
+/* line 9, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/sessions.scss */
+.session .button {
+  text-align: center;
+  /* a */
+}
+/* line 11, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/sessions.scss */
+.session .button a {
+  /* &:link, visited */
+  /* &:hover */
+}
+/* line 12, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/sessions.scss */
+.session .button a:link, .session .button a:visited {
+  color: white;
+  background-color: #04B2D9;
+}
+/* line 16, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/sessions.scss */
+.session .button a:hover {
+  text-decoration: none;
+  background-color: #0389a7;
+}
+/* line 22, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/sessions.scss */
+.session .btn {
+  margin-top: 20px;
+}
+
+/* .session */
+/* https://color.adobe.com/Jumping-Fish---New-Site-color-theme-7355512/ */
+/* line 3, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/shared.scss */
+h1, h2, h3, h4, h5, li, p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+/* h1, h2, h3, h4, h5, li, p */
+/* line 9, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/shared.scss */
+.external-link {
+  /* a a:link, a:visited */
+  /* a a:hover, a:active */
+}
+/* line 10, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/shared.scss */
+.external-link a:link, .external-link a:visited {
+  color: #04B2D9;
+}
+/* line 13, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/shared.scss */
+.external-link a:hover, .external-link a:active {
+  color: #83C1C0;
+}
+
+/* .external-link */
+/* line 18, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/shared.scss */
+a:link, a:visited, a:hover, a:active {
+  color: black;
+}
+
+/* line 22, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/shared.scss */
+a:hover {
+  text-decoration: none;
+  background-color: white;
+}
+
+/* DEFAULT STYLES TO BE MODIFIED OR REMOVED */
+/* line 29, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/shared.scss */
+a {
+  color: #000;
+}
+/* line 32, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/shared.scss */
+a:visited {
+  color: #666;
+}
+/* line 36, /Users/localflavor/Desktop/TTS/restaurantapp/app/assets/stylesheets/shared.scss */
+a:hover {
+  color: #04B2D9;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+
+
+
+
+
+
+
+
+ */
+
+
