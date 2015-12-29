@@ -21,12 +21,12 @@
   </div>
   <div class="field">
     <% if @user.new_record? %>
-      <p>Enter a username that will be your custom URL. You will not be able to change this later.</p>
-      <%= f.label :username %><br>
+      <%= f.label :username, "Username" %>
+      <p>Create a unique username with no spaces or capital letters. You will not be able to change this later.</p>
       <%= f.text_field :username %>
     <% else %>
       <%= f.label :username, "Your Custom URL" %>: 
-      https://localhost:3000/users/<%= @user.name %>
+      http://restaurantqueue.herokuapp.com/users/<%= @user.username %>
     <% end %><!-- if new user -->
   </div><!-- field -->
   <div class="field">

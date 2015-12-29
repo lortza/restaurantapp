@@ -24,6 +24,16 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Custom URL:</strong>
+  http://restaurantqueue.herokuapp.com/users/<%= @user.username %>
+</p>
+
 <h2>Restaurant Stats</h2>
 <p>
   <strong>On List:</strong>
@@ -58,3 +68,5 @@ Move this to a scope on the index page
 </ul>
 
 <%= link_to ' Edit Account', edit_user_path(@user), class: "btn btn-xs btn-default fa fa-pencil" %>
+
+<%= link_to "Delete Account", @user, class: "button", method: :delete, data: { comfirm: "Are you sure you want to delete this account? This action cannot be undone." } %>

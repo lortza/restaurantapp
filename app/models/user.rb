@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :restaurants, dependent: :destroy
 
   validates :name, presence: true
-  validates :username, presence: true, uniqueness: true
+  validates :username, presence: true, uniqueness: true, format: /\A\S+\z/
   validates :email, presence: true,
                   format: /\A\S+@\S+\z/,
                   uniqueness: { case_sensitive: false }

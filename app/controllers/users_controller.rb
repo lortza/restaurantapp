@@ -1,17 +1,16 @@
 class UsersController < ApplicationController
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :require_signin, except: [:new, :create]
   before_action :require_correct_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_admin, only: [:index, :destroy]
+  before_action :require_admin, only: [:index]
 
   # GET /users
-  # GET /users.json
   def index
     @users = User.all
   end
 
   # GET /users/1
-  # GET /users/1.json
   def show
     @restaurants = @user.restaurants
   end
@@ -26,7 +25,6 @@ class UsersController < ApplicationController
   end
 
   # POST /users
-  # POST /users.json
   def create
     @user = User.new(user_params)
     @user.save
@@ -35,35 +33,37 @@ class UsersController < ApplicationController
       redirect_to @user, notice: "Welcome #{@user.name}! Thanks for signing up!"
     else
       render :new
-    end 
+    end #if
   end #create
 
   # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
   def update
     if @user.update(user_params)
       redirect_to @user, notice: "#{@user.name}'s account has been successfully updated."
      else
        render :edit
-     end 
+     end #if
   end #update
 
   # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
     @user.destroy
     session[:user_id] = nil
-    redirect_to users_url, alert: "#{@user.name}'s Account successfully deleted!"
+    if current_user_admin?
+      redirect_to users_url, alert: "#{@user.name}'s Account successfully deleted!"
+    else
+      redirect_to signin_url, alert: "#{@user.name}'s Account successfully deleted!"
+    end #if
   end #destroy
 
   private
     def set_user
       @user = User.find_by!(username: params[:id])
-    end
+    end #set_user
 
     def user_params
       params.require(:user).permit(:name, :email, :username, :password, :password_confirmation)
-    end
+    end #user_params
 
     def require_correct_user
       @user = User.find_by!(username: params[:id])
