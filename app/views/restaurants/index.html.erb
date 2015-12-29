@@ -7,6 +7,15 @@
 </div> <!-- pull-right -->
 
 <h1><%= restaurant_filter_title %></h1>
+<nav class="sub-nav">
+  <ul>
+    <li><%= link_to "All Restaurants", restaurants_path %></li>
+    <li><%= link_to "Faves", filtered_restaurants_path(:fave) %></li>
+    <li><%= link_to "Not Tried (NOT WORKING)", filtered_restaurants_path(:not_tried) %></li>
+    <li><%= link_to "Been a While", filtered_restaurants_path(:been_a_while) %></li>
+    <li><%= link_to "Archived", filtered_restaurants_path(:archived) %></li>
+  </ul><!-- dropdown menu -->
+</nav>
 <%= show_all_button %>
 
   <% @restaurants.each do |restaurant| %>
