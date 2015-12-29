@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   def new
     if current_user.present?
-      redirect_to restaurants_url, notice: "You're already signed in! Here's your list of restaurants."
+      redirect_to restaurants_url
     else
       render :new
     end #if
