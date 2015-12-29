@@ -1,23 +1,21 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
-
-<%= form_tag(session_path) do %>
-  <fieldset>
-    <ol>
-      <li class="required">
-        <%= label_tag :email %>
-        <%= email_field_tag :email, nil, required: true, autofocus: true, size: 40 %>
-      </li>
-      <li class="required">
-        <%= label_tag :password %>
-        <%= password_field_tag :password, nil, required: true, size: 40 %>
-      </li>
-    </ol>
-    <p>
-      <%= submit_tag 'Sign In' %>
-    </p>
+<div class="session">
+  <%= form_tag(session_path) do %>
+    <fieldset>
+      <h1>Sign In</h1>
+        <div class="required">
+          <%= label_tag :email %>
+          <%= email_field_tag :email, nil, required: true, autofocus: true, size: 40 %>
+        </div>
+        <div class="required">
+          <%= label_tag :password %>
+          <%= password_field_tag :password, nil, required: true, size: 40 %>
+        </div>
+      <p class="button">
+        <%= submit_tag 'Sign In', class: "btn btn-success btn-lg" %>
+      </p>
+      <p class="button">
+        <%= link_to "Create an Account", new_user_path, class: "btn btn-primary btn-lg" %>
+      </p>
   </fieldset>
-<% end %> <!-- form_tag -->
-
-<h2>New to RestaurantApp?</h2>
-<%= link_to "Sign Up", new_user_path, class: "btn btn-default btn-xs" %>
+  <% end %> <!-- form_tag -->
+</div> <!-- session -->
