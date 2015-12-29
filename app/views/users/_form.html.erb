@@ -1,15 +1,15 @@
+<!-- START _FORM PARTIAL -->
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
       <ul>
       <% @user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
+      <% end %> <!-- errors.each -->
       </ul>
-    </div>
-  <% end %>
+    </div><!-- error_explanation -->
+  <% end %><!-- user.errors.any? -->
 
   <div class="field">
     <%= f.label :name %><br>
@@ -19,16 +19,16 @@
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
-  <% if @user.new_record? %>
-    <div class="field">
-    <p>Enter a username that will be your custom URL. You will not be able to change this later.</p>
+  <div class="field">
+    <% if @user.new_record? %>
+      <p>Enter a username that will be your custom URL. You will not be able to change this later.</p>
       <%= f.label :username %><br>
       <%= f.text_field :username %>
-  <% else %>
-    <%= f.label :username, "Your Custom URL" %>: 
-    https://localhost:3000/users/<%= @user.name %>
-    </div><!-- field -->
-  <% end %><!-- if new user -->
+    <% else %>
+      <%= f.label :username, "Your Custom URL" %>: 
+      https://localhost:3000/users/<%= @user.name %>
+    <% end %><!-- if new user -->
+  </div><!-- field -->
   <div class="field">
     <%= f.label :password %><br>
     <%= f.password_field :password %>
@@ -42,6 +42,8 @@
       <%= f.submit "Create Account" %>
     <% else %>
       <%= f.submit "Update Account" %>
-    <% end %>
+    <% end %><!-- if new record -->
   </div><!-- actions -->
-<% end %>
+<% end %><!-- form_for -->
+
+<!-- END _FORM PARTIAL -->
