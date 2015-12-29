@@ -12,6 +12,7 @@ module RestaurantsHelper
     case params[:filter]
     when "fave" then "Favorite Restaurants"
     when "archived" then "Archived Restaurants"
+    when "been_a_while" then "Been at Least 6 Months Since Last Visit"
     when "not_tried" then "Restaurants To Try"
     else "My Restaurants"
     end #case

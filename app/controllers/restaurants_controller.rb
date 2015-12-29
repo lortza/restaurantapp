@@ -11,6 +11,8 @@ class RestaurantsController < ApplicationController
     when "fave" then @restaurants = current_user.restaurants.fave
     when "archived" then @restaurants = current_user.restaurants.archived
     when "not_tried" then @restaurants = current_user.restaurants.not_tried
+    when "been_a_while"
+      @restaurants = current_user.restaurants.been_a_while
     else @restaurants = current_user.restaurants.active
     end #case
   end #index

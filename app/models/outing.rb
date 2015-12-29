@@ -1,5 +1,6 @@
 class Outing < ActiveRecord::Base
   belongs_to :restaurant
+  
 end #Outing
 
 # == Schema Information

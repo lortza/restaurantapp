@@ -16,11 +16,15 @@ class Restaurant < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
   validates :slug, uniqueness: true
 
-  scope :fave, -> { where(fave: true) }
-  scope :active, -> { where(archive: false) }
-  scope :archived, -> { where(archive: true) }
-  scope :not_tried, -> { where(untried_restaurants(current_user.restaurants)) }
-  #scope :beenawhile, -> { where(current_user.restaurants.outings.last > 4.months.ago) }
+  scope :fave, -> { where(fave: true).order("created_at DESC") }
+  scope :active, -> { where(archive: false).order("created_at DESC") }
+  scope :archived, -> { where(archive: true).order("created_at DESC") }
+  #scope :not_tried, -> { where(untried_restaurants(current_user.restaurants)) }
+
+  def self.been_a_while
+    Restaurant.select("DISTINCT *, restaurants.created_at").joins("JOIN outings o ON o.restaurant_id = restaurants.id").where("o.date > date(?)", 6.months.ago).order("restaurants.created_at DESC") 
+  end #self.been_a_while
+    
 
   def address_secondline
     "#{city}, #{state} #{zip}" 
