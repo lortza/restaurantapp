@@ -20,4 +20,10 @@ private
   end #untried_restaurants(restaurants)
   #helper_method :untried_restaurants
 
+  def nav_link_to(text, url)
+    classes = ['button']
+    classes << 'active' if current_page?(url)
+    link_to(text, url, class: classes.join(' '))
+  end #nav_link_to
+
 end #ApplicationHelper

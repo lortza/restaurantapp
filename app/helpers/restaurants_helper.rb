@@ -12,17 +12,11 @@ module RestaurantsHelper
     case params[:filter]
     when "fave" then "Favorite Restaurants"
     when "archived" then "Archived Restaurants"
-    when "been_a_while" then "Been at Least 6 Months Since Last Visit"
+    when "been_a_while" then "6 Months Since Last Visit"
     when "not_tried" then "Restaurants To Try"
     else "My Restaurants"
     end #case
-  end #page_title
-
-  def show_all_button
-    unless restaurant_filter_title == "My Restaurants"
-      link_to 'Show All', restaurants_path, class: "btn btn-xs btn-default"
-    end #unless
-  end #show_all_button
+  end #restaurant_filter_title
 
   def untried?(restaurant)
      restaurant.outings.size == 0
@@ -38,17 +32,12 @@ module RestaurantsHelper
      else
      end #if
   end #corner_banner
-    
 
-
-  ###### Wanted to make a list on categories on the restaurant index and use truncate to limit the characters
-  # def list_categories(restaurant)
-  #   category_list = []
-  #   restaurant.categories.each do |category|
-  #     category_list << category.name
-  #   end #each
-  #   truncate(category_list.to_s, length: 45, separator: " ")
-  # end #list_categories(restaurant)
-
+  # Created for Restaurants Index to back out of a scoped filter
+  # def show_all_button
+  #   unless restaurant_filter_title == "My Restaurants"
+  #     link_to 'Show All', restaurants_path, class: "btn btn-xs btn-default"
+  #   end #unless
+  # end #show_all_button
 
 end #RestaurantsHelper

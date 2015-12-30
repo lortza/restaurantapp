@@ -40,8 +40,6 @@ class Restaurant < ActiveRecord::Base
     slug
   end #to_param
 
-
-
 end #Restaurant
 
 # == Schema Information

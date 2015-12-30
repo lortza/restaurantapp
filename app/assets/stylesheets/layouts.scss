@@ -156,6 +156,10 @@ div {
         background-color: transparent;
         // font-weight: 700; 
       } /* a:hover */
+      &.active {
+        color: $primary-external-link; 
+      } /* &:active */
+        
         
     } /* a */
       
