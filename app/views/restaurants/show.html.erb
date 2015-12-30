@@ -1,79 +1,100 @@
 <%= content_for(:title, @restaurant.name) %>
 
 <p id="notice"><%= notice %></p>
+<article class="restaurant-showpage">
+  <div class="image-container">
+    <div class="show-corner-banner">
+      <%= corner_banner(@restaurant) %>
+    </div> <!-- corner-banner -->
+    <div class="showpage-image">
+      <%= image_for(@restaurant) %>
+      <h2><%= @restaurant.name %> <span class="price")>(<%= @restaurant.price %>)</span> </h2>
+    </div><!-- showpage-image -->
+  </div> <!-- image-container -->
 
-<div class="image-container">
-  <div class="show-corner-banner">
-    <%= corner_banner(@restaurant) %>
-  </div> <!-- corner-banner -->
-  <div class="showpage-image">
-    <%= image_for(@restaurant) %>
-    <h2><%= @restaurant.name %> </h2>
-  </div><!-- showpage-image -->
-</div> <!-- image-container -->
-<p>
-  <%= @restaurant.street %><br>
-  <%= @restaurant.address_secondline %><br>
-  <%= link_to "Map (doesn't work)", "https://www.google.com/maps/place/#{@restaurant.street}+#{@restaurant.city}+#{@restaurant.state}+#{@restaurant.zip}", target: "_blank" %>
-</p>
-<p><%= number_to_phone(@restaurant.phone) %></p>
-<p><%= link_to @restaurant.website, @restaurant.website, target: "_blank" %></p>
-<%= link_to "Find on Yelp", "http://www.yelp.com/search?find_desc=#{@restaurant.name}&find_loc=#{@restaurant.city}+#{@restaurant.state}", target: "_blank" %> | 
-<%= link_to "Find on Google", "https://www.google.com/#newwindow=1&q=#{@restaurant.name}+#{@restaurant.street}+#{@restaurant.city}+#{@restaurant.state}+#{@restaurant.zip}", target: "_blank" %>
+  <nav>
+    <%= link_to "Map (doesn't work)", "https://www.google.com/maps/place/#{@restaurant.street}+#{@restaurant.city}+#{@restaurant.state}+#{@restaurant.zip}", target: "_blank" %> | 
+    <%= link_to "Website", @restaurant.website, target: "_blank" %> | 
+    <%= link_to "Yelp", "http://www.yelp.com/search?find_desc=#{@restaurant.name}&find_loc=#{@restaurant.city}+#{@restaurant.state}", target: "_blank" %> | 
+    <%= link_to "Google", "https://www.google.com/#newwindow=1&q=#{@restaurant.name}+#{@restaurant.street}+#{@restaurant.city}+#{@restaurant.state}+#{@restaurant.zip}", target: "_blank" %>
+  </nav>
 
-<p>
-  <strong>Price:</strong>
-  <%= @restaurant.price %>
-</p>
+    <table class="table">
+      <tr>
+        <td rowspan="3", width = "50%">
+          <p>
+            <%= @restaurant.street %><br>
+            <%= @restaurant.address_secondline %><br>
+            <%= number_to_phone(@restaurant.phone) %>
+          </p> 
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Fave: 
+        </td>
+        <td>
+          <!-- FAVE BUTTON ACTION -->
+           <%= form_for(@restaurant, url: restaurant_path(@restaurant), :html => {class: "form-inline"}) do |f| %>
+             <% if @restaurant .fave %>
+               <%= f.hidden_field :fave, :value => false %>
+               <%= image_submit_tag "toggle-on.png" %>
+             <% else %>
+               <%= f.hidden_field :fave, :value => true %>
+               <%= image_submit_tag "toggle-off.png" %>
+             <% end %>  <!-- if -->
+           <% end %> <!-- do -->
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Archive: 
+        </td>
+        <td>
+         <!-- ARCHIVE BUTTON ACTION -->
+         <%= form_for(@restaurant, url: restaurant_path(@restaurant), :html => {class: "form-inline"}) do |f| %>
+           <% if @restaurant .archive %>
+             <%= f.hidden_field :archive, :value => false %>
+             <%= image_submit_tag "toggle-on.png" %>
+           <% else %>
+             <%= f.hidden_field :archive, :value => true %>
+             <%= image_submit_tag "toggle-off.png" %>
+           <% end %>  <!-- if -->
+         <% end %> <!-- do -->
+        </td>
+      </tr>
+    </table>
 
-<p><strong>Categories:</strong></p>
-<ul>
-    <% @categories.order("name").each do |category| %>
-      <li><%= link_to category.name, category %></li>
-    <% end %> <!-- categories -->
-  </ul>
-
-<!-- FAVE BUTTON ACTION -->
-<p>
-   <%= form_for(@restaurant, url: restaurant_path(@restaurant), :html => {class: "form-inline"}) do |f| %>
-     <% if @restaurant .fave %>
-       <%= f.hidden_field :fave, :value => false %>
-       <%= f.submit "UnFave", class: "btn btn-default btn-xs" %>
-     <% else %>
-       <%= f.hidden_field :fave, :value => true %>
-       <%= f.submit "Fave", class: "btn btn-default btn-xs" %>
-     <% end %>  <!-- if -->
-   <% end %> <!-- do -->
-</p>
-
-<!-- ARCHIVE BUTTON ACTION -->
-<p>
-   <%= form_for(@restaurant, url: restaurant_path(@restaurant), :html => {class: "form-inline"}) do |f| %>
-     <% if @restaurant .archive %>
-       <%= f.hidden_field :archive, :value => false %>
-       Currently Archived. Make Active Again? 
-       <%= f.submit "UnArchive", class: "btn btn-default btn-xs" %>
-     <% else %>
-       <%= f.hidden_field :archive, :value => true %>
-       <%= f.submit "Archive", class: "btn btn-default btn-xs" %>
-     <% end %>  <!-- if -->
-   <% end %> <!-- do -->
-</p>
-
-<p><strong><%= pluralize(@restaurant.dishes.size, "Favorite Dish") %>:</strong> (<%= link_to "+ Add a Dish", new_restaurant_dish_path(@restaurant) %>)</p>
+  <p><strong>Categories:</strong></p>
   <ul>
-    <% @dishes.order("name").each do |dish| %>
-      <li><%= dish.name %> [links] </li>
-    <% end %> <!-- dishes -->
-  </ul>
+      <% @categories.order("name").each do |category| %>
+        <li><%= link_to category.name, category %></li>
+      <% end %> <!-- categories -->
+    </ul>
 
-<p><strong><%= pluralize(@restaurant.outings.size, "Recent Visit") %>:</strong> (<%= link_to "+ Add a Visit", new_restaurant_outing_path(@restaurant) %>)</p>
-  <ul>
-    <% @outings.order("date DESC").each do |outing| %>
-      <li><%= outing.date %><% if outing.note? %>, <%= outing.note %> <% end %> [links] </li>
-    <% end %> <!-- outings -->
-  </ul>
-<hr>
-<%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-default btn-xs" %> 
-<%= link_to 'Back', restaurants_path, class: "btn btn-default btn-xs" %>  
-<%= link_to 'Delete', @restaurant, method: :delete, data: { confirm: "Are you sure you want to delete " + @restaurant.name + "? This action cannot be undone." }, class: "btn btn-default btn-xs" %>
+  
+
+  <p><strong><%= pluralize(@restaurant.dishes.size, "Favorite Dish") %>:</strong> (<%= link_to "+ Add a Dish", new_restaurant_dish_path(@restaurant) %>)</p>
+    <ul>
+      <% @dishes.order("name").each do |dish| %>
+        <li><%= dish.name %> [links] </li>
+      <% end %> <!-- dishes -->
+    </ul>
+
+  <p><strong><%= pluralize(@restaurant.outings.size, "Recent Visit") %>:</strong> (<%= link_to "+ Add a Visit", new_restaurant_outing_path(@restaurant) %>)</p>
+    <ul>
+      <% @outings.order("date DESC").each do |outing| %>
+        <li><%= outing.date %><% if outing.note? %>, <%= outing.note %> <% end %> [links] </li>
+      <% end %> <!-- outings -->
+    </ul>
+
+    <p>
+      <strong>Notes:</strong>
+      <%= @restaurant.notes %>
+    </p>
+  <hr>
+  <%= link_to ' Back', restaurants_path, class: "btn btn-default btn-sm fa fa-arrow-left" %>  
+  <%= link_to ' Edit', edit_restaurant_path(@restaurant), class: "btn btn-default btn-sm fa fa-pencil" %> 
+  <%= link_to ' Delete', @restaurant, method: :delete, data: { confirm: "Are you sure you want to delete " + @restaurant.name + "? This action cannot be undone." }, class: "btn btn-default btn-sm fa fa-ban" %>
+
+</article><!-- restaurant-showpage -->

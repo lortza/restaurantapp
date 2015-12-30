@@ -77,10 +77,48 @@ article.index-listing {
     } /* .index-info */
 } /* article.index-listing */
 
-.archived {
-  color: white;
-  background-color: red;
-} /* .archived */
+
+article.restaurant-showpage {
+  max-width: 300px;
+  table {
+     margin-bottom: 0px; 
+   } /* table */
+      
+  nav {
+    margin-bottom: 10px; 
+  } /* nav */
+  .showpage-image {
+    position: relative;
+    z-index: 1;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    background: 50% 50% no-repeat;
+    margin-bottom: 10px;
+    img {
+      min-height: 100%;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+    } /* img */
+    h2 {
+      color: white;
+      background-color:rgba(4, 178, 217, 0.75);
+      padding: 8px;
+      position: absolute;
+      bottom: 0px;
+      margin-bottom: 0px;
+      width: 300px;
+      overflow: hidden;
+      .price {
+        font-size: 50%; 
+        float: right;
+        margin-top: 3.5%;
+      } /* .price */
+    } /* h2 */
+  } /* .showpage-image */
+} /* article.restaurant-showpage */
+  
 
 .image-container {
   position: relative;
@@ -102,30 +140,7 @@ article.index-listing {
   left: -10px; 
 } /* .corner-banner */ 
 
-.showpage-image {
-  position: relative;
-  z-index: 1;
-  width: 300px;
-  height: 300px;
-  overflow: hidden;
-  background: 50% 50% no-repeat;
-  img {
-    min-height: 100%;
-    max-width: 100%;
-    width: auto;
-    height: auto;
-  } /* img */
-  h2 {
-    color: white;
-    background-color:rgba(4, 178, 217, 0.75);
-    padding: 5px 25px 5px 5px;
-    position: absolute;
-    bottom: 0px;
-    margin-bottom: 0px;
-    width: 300px;
-    overflow: hidden;
-  } /* h2 */
-} /* .showpage-image */
+
   
 
 @media (max-width: 767px) {
