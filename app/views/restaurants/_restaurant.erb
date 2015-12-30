@@ -1,23 +1,18 @@
-<article class="index-listing">
 <div class="image-container">
-  <div class="corner-banner">
+  <div class="index-corner-banner">
     <%= corner_banner(restaurant) %>
   </div> <!-- corner-banner -->
-  <div class="index-image">
-    <%= link_to image_for(restaurant), restaurant %>
-  </div><!-- index-image -->
 </div> <!-- image-container -->
 
+<article class="index-listing">
+  <div class="image-container">
+    <div class="index-image">
+      <%= link_to image_for(restaurant), restaurant %>
+    </div><!-- index-image -->
+  </div> <!-- image-container -->
+
   <div class="index-info">
-    
-    <h2><%= link_to restaurant.name, restaurant %> 
-      <% if untried?(restaurant) %>
-        <span class="untried-icon"><%= link_to " New", filtered_restaurants_path(:fave), class: "fa fa-star" %></span>
-      <% end %><!-- untried? -->
-    <% if restaurant.fave? %>
-      <span class="fave-icon"><%= link_to " Fave", filtered_restaurants_path(:fave), class: "fa fa-trophy" %></span>
-      <% end %><!-- fave? -->
-      </h2>
+    <h2><%= link_to restaurant.name, restaurant %> </h2>
     <p><%= restaurant.street %> (map)</p>
     <p><%= restaurant.price %>, 
       <% restaurant.categories.limit(3).each do |category| %>
