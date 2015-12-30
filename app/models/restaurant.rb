@@ -14,7 +14,17 @@ class Restaurant < ActiveRecord::Base
   validates :state, inclusion: { in: STATES }
 
   validates :name, presence: true, uniqueness: true
+  validates :phone, length: { minimum: 10, allow_blank: true }
+  #email: /\A\S+@\S+\z/
+  #format: /\A\(?[1-9]\d{2}[\)\-]\s?\d{3}\-\d{4}\z/
+  validates :website, format: { with: URI.regexp }, if: Proc.new { |a| a.website.present? }
+
+  #validates :website, format: /\A((http|ftp|https):\/\/w{3}[\d]*.|(http|ftp|https):\/\/|w{3}[\d]*.)([\w\d\._\-#\(\)\[\]\,;:]+@[\w\d\._\-#\(\)\[\]\,;:])?([a-z0-9]+.)*[a-z\-0-9]+.([a-z]{2,3})?[a-z]{2,6}(:[0-9]+)?(\/[\/a-z0-9\._\-,]+)*[a-z0-9\-_\.\s\%]+(\?[a-z0-9=%&\.\-,#]+)?\z/
+  
   validates :slug, uniqueness: true
+
+  #before_save :format_phone
+  before_save :format_website
 
   scope :fave, -> { where(fave: true).order("created_at DESC") }
   scope :active, -> { where(archive: false).order("created_at DESC") }
@@ -26,8 +36,37 @@ class Restaurant < ActiveRecord::Base
 
     Restaurant.find_by_sql(["SELECT * FROM (#{all_restaurants_with_visits_query}) as all_rest WHERE all_rest.last_visit < date(?) ORDER BY all_rest.created_at DESC", 6.months.ago])
   end #self.been_a_while
-    
 
+  #unused
+  def format_phone
+    self.phone = phone.gsub!(/\D/, "") 
+    #self.phone = phone.unpack('A3A3A4').join('-')
+  end #format_phone
+
+  def format_website_UNUSED
+    if self.website.include? "https://"
+      self.website = website.sub!(%r{^https://},"")
+    elsif self.website.include? "http://"
+      self.website = website.sub!(%r{^http://},"")
+    else
+    end #if
+    self.website.insert(0, 'http://')
+  end #format_website
+
+  def format_website
+    if self.website.present?
+      if self.website.include? "https://"
+        self.website = website
+      elsif self.website.include? "http://"
+        self.website = website
+      else
+        self.website.insert(0, 'http://')
+      end #if
+    end #present?
+  end #format_website
+    
+    
+    
   def address_secondline
     "#{city}, #{state} #{zip}" 
   end #address_secondline

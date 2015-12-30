@@ -41,11 +41,12 @@
   </div>
   <div class="field">
     <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
+    <%= f.text_field :phone, placeholder: "555-555-5555" %>
   </div>
   <div class="field">
     <%= f.label :website %><br>
-    <%= f.text_field :website %>
+    <p>Please include the full URL (ex: https://website.com).</p>
+    <%= f.text_field :website, placeholder: "https://website.com" %>
   </div>
   <div class="field">
     <%= f.label :category, "Category" %><br>
