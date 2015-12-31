@@ -4,8 +4,8 @@
 
 <%= render 'form' %>
 
-  <%= link_to 'Cancel', @user, class: "btn btn-xs btn-default" %> 
-  <%= link_to "Delete My Account", @user, method: :delete, data: { confirm: @user.name + '! Are you sure you want to delete your account? There is no undoing this action.' }, class: "btn btn-xs btn-default" %>
+  <%= link_to ' Back', @user, class: "btn btn-sm btn-default fa fa-arrow-left" %> 
+  <%= link_to " Delete My Account", @user, method: :delete, data: { confirm: @user.name + '! Are you sure you want to delete your account? There is no undoing this action.' }, class: "btn btn-sm btn-default fa fa-ban" %>
 
 <p>make delete available for only the curent user or the admin user</p>
   

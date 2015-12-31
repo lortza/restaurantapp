@@ -67,6 +67,6 @@ Move this to a scope on the index page
 <% end %> <!-- each -->
 </ul>
 
-<%= link_to ' Edit Account', edit_user_path(@user), class: "btn btn-xs btn-default fa fa-pencil" %>
+<%= link_to ' Account Settings', edit_user_path(@user), class: "btn btn-sm btn-default fa fa-gears" %>
 
-<%= link_to "Delete Account", @user, class: "button", method: :delete, data: { comfirm: "Are you sure you want to delete this account? This action cannot be undone." } %>
+<%= link_to " Delete My Account", @user, class: "btn btn-sm btn-default fa fa-ban", method: :delete, data: { comfirm: "Are you sure you want to delete this account? This action cannot be undone." } %>
