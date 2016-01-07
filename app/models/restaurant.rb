@@ -65,8 +65,6 @@ class Restaurant < ActiveRecord::Base
     end #present?
   end #format_website
     
-    
-    
   def address_secondline
     "#{city}, #{state} #{zip}" 
   end #address_secondline
