@@ -37,6 +37,14 @@ class Restaurant < ActiveRecord::Base
     Restaurant.find_by_sql(["SELECT * FROM (#{all_restaurants_with_visits_query}) as all_rest WHERE all_rest.last_visit < date(?) ORDER BY all_rest.created_at DESC", 6.months.ago])
   end #self.been_a_while
 
+
+#not working yet
+  def self.not_tried 
+    all_restaurants_without_visits_query = "SELECT DISTINCT restaurants.id, restaurants.name, restaurants.street, restaurants.archive, restaurants.fave, restaurants.slug, restaurants.price, restaurants.image_file_name, restaurants.created_at, (SELECT o.date FROM outings o JOIN restaurants r ON r.id = o.restaurant_id WHERE r.id = restaurants.id ORDER BY date DESC LIMIT 1) AS last_visit FROM restaurants JOIN outings o ON o.restaurant_id = restaurants.id"
+
+    Restaurant.find_by_sql(["SELECT * FROM (#{all_restaurants_with_visits_query}) as all_rest WHERE all_rest.last_visit < date(?) ORDER BY all_rest.created_at DESC", 6.months.ago])
+  end #self.been_a_while
+
   #unused
   def format_phone
     self.phone = phone.gsub!(/\D/, "") 
