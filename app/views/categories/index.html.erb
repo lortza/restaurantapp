@@ -2,12 +2,12 @@
 
 <p id="notice"><%= notice %></p>
 
-<div class="pull-right">
+<div class="pull-right btn btn-default btn-sm">
   <% if current_user_admin? %>
-    <%= link_to ' Add a Category', new_category_path, class: "fa fa-plus btn btn-sm btn-default" %>
+    <icon class="fa fa-plus"></icon>
+    <%= link_to ' Add a Category', new_category_path %>
   <% end %><!-- current_user.admin? --> 
 </div> <!-- pull-right -->
-
 
 <h1>Categories</h1>
 
@@ -28,8 +28,18 @@
         </td>
         <% if current_user_admin? %>
           <td>(<%= category.restaurants.size %>)</td>
-          <td><%= link_to 'Edit', edit_category_path(category), class: "btn btn-xs btn-default" %></td>
-          <td><%= link_to 'Delete', category, method: :delete, data: { confirm: "Are you sure you want to delete " + category.name + "? This action cannot be undone." }, class: "btn btn-xs btn-default" %></td>
+          <td>
+            <div class="btn btn-default btn-sm">
+               <icon class="fa fa-pencil"></icon>
+               <%= link_to 'Edit', edit_category_path(category) %>
+            </div> <!-- btn btn-default btn-sm -->
+          </td>
+          <td>
+            <div class="btn btn-default btn-sm">
+               <icon class="fa fa-ban"></icon>
+               <%= link_to 'Delete', category, method: :delete, data: { confirm: "Are you sure you want to delete " + category.name + "? This action cannot be undone." } %>
+            </div> <!-- btn btn-default btn-sm -->
+          </td>
         <% end %><!-- current_user_admin? -->
       </tr>
     <% end %>
@@ -37,4 +47,3 @@
 </div><!--categories -->
 
 </table>
-

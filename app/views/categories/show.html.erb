@@ -10,11 +10,19 @@
     <% end %> <!-- if -->
   <% end %> <!-- each do -->
 
-<%= link_to 'Back', categories_path, class: "btn btn-xs btn-default" %>
+<div class="btn btn-default btn-sm">
+  <icon class="fa fa-arrow-left"> </icon>
+  <%= link_to ' Back', categories_path %>
+</div>
 
 <% if current_user_admin? %>
-   <%= link_to 'Edit Category Name', edit_category_path(@category), class: 'btn btn-default btn-xs' %>
-  <%= link_to 'Delete Category', @category,
-              class: 'btn btn-default btn-xs',
+  <div class="btn btn-default btn-sm">
+    <icon class="fa fa-pencil"> </icon>
+    <%= link_to 'Edit Category Name', edit_category_path(@category) %>
+  </div><!-- btn btn-default btn-sm -->
+  <div class="btn btn-default btn-sm">
+    <icon class="fa fa-ban"> </icon>
+    <%= link_to 'Delete Category', @category,
               method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+  </div><!-- btn btn-default btn-sm -->
+<% end %><!-- current_user_admin -->

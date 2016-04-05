@@ -93,8 +93,17 @@
       <%= @restaurant.notes %>
     </p>
   <hr>
-  <%= link_to ' Back', restaurants_path, class: "btn btn-default btn-sm fa fa-arrow-left" %>  
-  <%= link_to ' Edit', edit_restaurant_path(@restaurant), class: "btn btn-default btn-sm fa fa-pencil" %> 
-  <%= link_to ' Delete', @restaurant, method: :delete, data: { confirm: "Are you sure you want to delete " + @restaurant.name + "? This action cannot be undone." }, class: "btn btn-default btn-sm fa fa-ban" %>
+  <div class="btn btn-default btn-sm">
+     <icon class="fa fa-arrow-left"></icon>
+     <%= link_to ' Back', restaurants_path %>
+  </div> <!-- btn btn-default btn-sm -->
+  <div class="btn btn-default btn-sm">
+     <icon class="fa fa-pencil"></icon>
+     <%= link_to ' Edit', edit_restaurant_path(@restaurant) %>
+  </div> <!-- btn btn-default btn-sm -->
+  <div class="btn btn-default btn-sm">
+     <icon class="fa fa-ban"></icon>
+     <%= link_to ' Delete', @restaurant, method: :delete, data: { confirm: "Are you sure you want to delete " + @restaurant.name + "? This action cannot be undone." } %>
+  </div> <!-- btn btn-default btn-sm -->
 
 </article><!-- restaurant-showpage -->
