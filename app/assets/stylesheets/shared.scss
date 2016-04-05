@@ -37,3 +37,16 @@ h1, h2, h3, h4, h5, li, p {
     color: $primary-external-link;
   }
 }
+
+.btn {
+  a {
+
+    &:visited {
+      color: #000;
+    }
+
+    &:hover {
+      color: #000;
+    }
+  }/* a */
+} /* .btn */

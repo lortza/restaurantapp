@@ -5,8 +5,9 @@
 <h2>User Information</h2>
 <% unless profile_image_for(@user).include? "https://secure.gravatar.com/avatar/e5c584dada3d2782af5c451aeb72287c" %>
   <div class="external-link">
-    <%= profile_image_for(@user) %>
-    <p><%= link_to " Edit Gravatar", "https://en.gravatar.com/emails/", target: "_blank", class: "fa fa-pencil" %></p>
+    <%= profile_image_for(@user) %><br>
+    <icon class="fa fa-pencil"></icon>
+    <%= link_to " Edit Gravatar", "https://en.gravatar.com/emails/", target: "_blank" %>
   </div> <!-- external-link -->
 <% else %>
   <div class="external-link">
@@ -67,6 +68,12 @@ Move this to a scope on the index page
 <% end %> <!-- each -->
 </ul>
 
-<%= link_to ' Account Settings', edit_user_path(@user), class: "btn btn-sm btn-default fa fa-gears" %>
 
-<%= link_to " Delete My Account", @user, class: "btn btn-sm btn-default fa fa-ban", method: :delete, data: { comfirm: "Are you sure you want to delete this account? This action cannot be undone." } %>
+<div class="btn btn-default btn-sm">
+  <icon class="fa fa-gears"></icon>
+  <%= link_to ' Account Settings', edit_user_path(@user) %>
+</div><!-- btn btn-default btn-sm -->
+<div class="btn btn-default btn-sm">
+  <icon class="fa fa-ban"></icon>
+  <%= link_to " Delete My Account", @user, method: :delete, data: { comfirm: "Are you sure you want to delete this account? This action cannot be undone." } %>
+</div><!-- btn btn-default btn-sm -->
