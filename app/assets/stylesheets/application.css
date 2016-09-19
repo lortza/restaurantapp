@@ -12,14 +12,5 @@
  *
  *= require_tree .
  *= require_self
- *= require layouts
- *= require shared
- *= require sessions
- *= require categories
- *= require dishes
- *= require outings
- *= require restaurants
- *= require users
- *= require forms
  */
 
