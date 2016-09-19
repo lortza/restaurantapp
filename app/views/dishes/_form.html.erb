@@ -1,12 +1,12 @@
 <%= form_for [@restaurant, @dish] do |f| %>
   <%= render "shared/errors", object: @dish %>
+
   <fieldset>
-    <ol>
-      <li class="required">
-        <%= f.label :name %>
-        <%= f.text_field :name, cols: 80, placeholder: "[dish name]" %>
-      </li>
-    </ol>
+    <div class="required">
+      <%= f.label :name %>
+      <%= f.text_field :name, cols: 80, placeholder: "[dish name]" %>
+    </div>
+
     <div class="actions">
       <% if @dish.new_record? %>
         <%= f.submit "Create Dish" %>

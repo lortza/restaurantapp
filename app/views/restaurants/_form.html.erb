@@ -10,11 +10,10 @@
       </ul>
     </div>
   <% end %><!-- if errors -->
-  <fieldset>
 
-  <ol>
+<fieldset>
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name, "Name*" %><br>
     <%= f.text_field :name %>
   </div>
   <% unless @restaurant.new_record? %>
@@ -24,15 +23,15 @@
     </div> <!-- field -->
   <% end %>
   <div class="field">
-    <%= f.label :street %><br>
+    <%= f.label :street, "Street*" %><br>
     <%= f.text_field :street %>
   </div>
   <div class="field">
-    <%= f.label :city %><br>
+    <%= f.label :city, "City*" %><br>
     <%= f.text_field :city %>
   </div>
   <div class="field">
-    <%= f.label :state %><br>
+    <%= f.label :state, "State*" %><br>
     <%= f.select :state, Restaurant::STATES, prompt: "Pick one" %>
   </div>
   <div class="field">
@@ -49,20 +48,20 @@
     <%= f.text_field :website, placeholder: "https://website.com" %>
   </div>
   <div class="field">
+    <%= f.label :price, "Price*" %><br>
+    <%= f.select :price, Restaurant::PRICES, prompt: "Pick One" %>
+  </div>
+  <div class="field">
     <%= f.label :category, "Category" %><br>
     <p>Please select at least 1 Category:</p>
   </div>
-  <div class="form-columns3">
+  <div class="form-columns">
     <%= f.collection_check_boxes(:category_ids, Category.all.order(name: :asc), :id, :name) %>
-  </div> <!-- form-columns3 -->
+  </div> <!-- form-columns -->
   <div class="field">
     <%= f.label :image_file_name, "Restaurant Image" %><br>
     <%= image_tag @restaurant.image_file_name, class: "form-image" if @restaurant.image_file_name.present?  %>
     <%= f.text_field :image_file_name %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.select :price, Restaurant::PRICES, prompt: "Pick One" %>
   </div>
   <div class="field">
     <%= f.label :fave %><br>
@@ -91,6 +90,6 @@
       <%= link_to 'Cancel', @restaurant, class: "btn btn-xs btn-default" %>
     <% end %><!-- new record? -->
   </div>
-  </fieldset>
+</fieldset>
 <% end %><!-- form for -->
 
