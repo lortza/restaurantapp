@@ -31,6 +31,10 @@ class Restaurant < ActiveRecord::Base
   scope :archived, -> { where(archive: true).order("created_at DESC") }
   #scope :not_tried, -> { where(untried_restaurants(current_user.restaurants)) }
 
+  def self.search(search)
+    where('lower(name) LIKE ?', "%#{search}%".downcase.gsub(/\s+/, ""))
+  end #self.search(search)
+
   def self.been_a_while
     all_restaurants_with_visits_query = "SELECT DISTINCT restaurants.id, restaurants.name, restaurants.street, restaurants.archive, restaurants.fave, restaurants.slug, restaurants.price, restaurants.image_file_name, restaurants.created_at, (SELECT o.date FROM outings o JOIN restaurants r ON r.id = o.restaurant_id WHERE r.id = restaurants.id ORDER BY date DESC LIMIT 1) AS last_visit FROM restaurants JOIN outings o ON o.restaurant_id = restaurants.id"
 

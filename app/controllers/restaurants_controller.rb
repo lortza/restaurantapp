@@ -8,12 +8,12 @@ class RestaurantsController < ApplicationController
   # GET /restaurants.json
   def index
     if params[:search]
-     @restaurants = Restaurant.where("name LIKE '%#{params[:search]}%'")
+      @restaurants = Restaurant.search(params[:search]).order('name')
      if @restaurants.size.zero?
        flash[:notice] = 'Sorry, there are no matching restaurants for your search.'
        @restaurants = current_user.restaurants.active
      end #if zero
-    else    
+    else
       case params[:filter]
       when "fave" then @restaurants = current_user.restaurants.fave
       when "archived" then @restaurants = current_user.restaurants.archived
