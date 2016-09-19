@@ -68,7 +68,7 @@ class RestaurantsController < ApplicationController
   # DELETE /restaurants/1.json
   def destroy
     @restaurant.destroy
-    redirect_to restaurants_url, alert: 'Restaurant was successfully deleted.' 
+    redirect_to restaurants_url, alert: 'Restaurant was successfully deleted.'
   end #destroy
 
   private
@@ -79,9 +79,8 @@ class RestaurantsController < ApplicationController
     def correct_user_restaurant
       unless current_user.restaurants.include? @restaurant
         redirect_to restaurants_url, notice: "Whoops! That wasn't your restaurant."
-      end #if 
+      end #if
     end #correct_user_restaurant
-      
 
     def restaurant_params
       params.require(:restaurant).permit(:name, :street, :city, :state, :zip, :phone, :website, :image_file_name, :price, :fave, :archive, :user_id, :slug, :notes, category_ids: [])

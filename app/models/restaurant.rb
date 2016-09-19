@@ -20,7 +20,7 @@ class Restaurant < ActiveRecord::Base
   validates :website, format: { with: URI.regexp }, if: Proc.new { |a| a.website.present? }
 
   #validates :website, format: /\A((http|ftp|https):\/\/w{3}[\d]*.|(http|ftp|https):\/\/|w{3}[\d]*.)([\w\d\._\-#\(\)\[\]\,;:]+@[\w\d\._\-#\(\)\[\]\,;:])?([a-z0-9]+.)*[a-z\-0-9]+.([a-z]{2,3})?[a-z]{2,6}(:[0-9]+)?(\/[\/a-z0-9\._\-,]+)*[a-z0-9\-_\.\s\%]+(\?[a-z0-9=%&\.\-,#]+)?\z/
-  
+
   validates :slug, uniqueness: true
 
   #before_save :format_phone
@@ -43,7 +43,7 @@ class Restaurant < ActiveRecord::Base
 
 
 #not working yet
-  def self.not_tried 
+  def self.not_tried
     all_restaurants_without_visits_query = "SELECT DISTINCT restaurants.id, restaurants.name, restaurants.street, restaurants.archive, restaurants.fave, restaurants.slug, restaurants.price, restaurants.image_file_name, restaurants.created_at, (SELECT o.date FROM outings o JOIN restaurants r ON r.id = o.restaurant_id WHERE r.id = restaurants.id ORDER BY date DESC LIMIT 1) AS last_visit FROM restaurants JOIN outings o ON o.restaurant_id = restaurants.id"
 
     Restaurant.find_by_sql(["SELECT * FROM (#{all_restaurants_with_visits_query}) as all_rest WHERE all_rest.last_visit < date(?) ORDER BY all_rest.created_at DESC", 6.months.ago])
@@ -51,7 +51,7 @@ class Restaurant < ActiveRecord::Base
 
   #unused
   def format_phone
-    self.phone = phone.gsub!(/\D/, "") 
+    self.phone = phone.gsub!(/\D/, "")
     #self.phone = phone.unpack('A3A3A4').join('-')
   end #format_phone
 
@@ -76,9 +76,9 @@ class Restaurant < ActiveRecord::Base
       end #if
     end #present?
   end #format_website
-    
+
   def address_secondline
-    "#{city}, #{state} #{zip}" 
+    "#{city}, #{state} #{zip}"
   end #address_secondline
 
   def generate_slug
@@ -90,30 +90,3 @@ class Restaurant < ActiveRecord::Base
   end #to_param
 
 end #Restaurant
-
-# == Schema Information
-#
-# Table name: restaurants
-#
-#  id              :integer          not null, primary key
-#  name            :string
-#  street          :string
-#  city            :string
-#  state           :string
-#  zip             :string
-#  phone           :string
-#  website         :string
-#  image_file_name :string
-#  price           :string
-#  fave            :boolean          default(FALSE)
-#  archive         :boolean          default(FALSE)
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  user_id         :integer
-#  slug            :string
-#  notes           :string
-#
-# Indexes
-#
-#  index_restaurants_on_user_id  (user_id)
-#
