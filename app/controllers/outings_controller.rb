@@ -1,6 +1,7 @@
 class OutingsController < ApplicationController
 
-  before_action :set_restaurant, :set_outing
+  before_action :set_restaurant
+  before_action :set_outing, only: [:show, :edit, :update, :destroy]
 
   def index
     @outings = @restaurant.outings
