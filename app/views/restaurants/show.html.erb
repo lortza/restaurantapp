@@ -14,7 +14,7 @@
 
   <nav>
     <%= link_to "Map (doesn't work)", "https://www.google.com/maps/place/#{@restaurant.street}+#{@restaurant.city}+#{@restaurant.state}+#{@restaurant.zip}", target: "_blank" %> | 
-    <%= link_to "Website", @restaurant.website, target: "_blank" %> | 
+    <% if @restaurant.website.present? %><%= link_to "Website", @restaurant.website, target: "_blank" %> | <% end %>
     <%= link_to "Yelp", "http://www.yelp.com/search?find_desc=#{@restaurant.name}&find_loc=#{@restaurant.city}+#{@restaurant.state}", target: "_blank" %> | 
     <%= link_to "Google", "https://www.google.com/#newwindow=1&q=#{@restaurant.name}+#{@restaurant.street}+#{@restaurant.city}+#{@restaurant.state}+#{@restaurant.zip}", target: "_blank" %>
   </nav>
