@@ -2,7 +2,7 @@ module RestaurantsHelper
 
   def image_for(restaurant)
     if restaurant.image_file_name.blank?
-      image_tag "http://placehold.it/75x75"
+      image_tag "restaurant_placeholder.jpg"
     else
       image_tag restaurant.image_file_name
     end #if
