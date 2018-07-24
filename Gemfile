@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
 
+ruby '2.2.4'
+
 gem 'will_paginate', '~> 3.0.6'
 
 gem "annotate"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.3'
+gem 'rails', '4.2.10'
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'pg', '0.21'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -37,7 +39,7 @@ gem 'awesome_print'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
- gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
+ # gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
  gem 'pry-byebug'
  # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -49,4 +51,3 @@ group :development do
  gem "binding_of_caller"
  gem 'quiet_assets'
 end #development
-

@@ -1,28 +1,7 @@
-== README
+== RestaurantQueue
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+WIP Rails app to organize restaurant where you've been and new ones you want to try. Never have to deal with the dreaded "IDK, where do _you_ want to go?" question again.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Ruby 2.2.4
+* Rails 4.2.10
+* Postgres 0.21
