@@ -5,3 +5,7 @@ WIP Rails app to organize restaurant where you've been and new ones you want to 
 * Ruby 2.2.4
 * Rails 4.2.10
 * Postgres 0.21
+
+Hosted on heroku at: https://restaurantqueue.herokuapp.com/
+
+_App is currently turned off_
